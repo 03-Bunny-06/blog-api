@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 const router = Router();
 const { User, Blogs } = require("../db/index.js");
 const {JWT_KEY} = require('../config.js');
+const userMiddleware = require("../middlewares/user.js");
 
 //SignUp for User (creation of new User)
 router.post('/signup', async (req, res) => {
@@ -61,8 +62,27 @@ router.get('/blogs', async (req, res) => {
     })
 })
 
-//Filter Based on Topic feild
-router.get('/blogs-topic', async (req, res) => {
+//View Specific Blog
+router.get('/blogs/:blogId', userMiddleware, async (req, res) => {
+    const blogId = req.params.blogId;
+
+    const blogData = await Blogs.findById(blogId);
+
+    if(!blogData){
+        res.status(400).json({
+            "msg": "Blog does not exist!!!"
+        })
+    }
+    else{
+        res.status(200).json({
+            "msg": "Blog found!!",
+            "blog": blogData
+        })
+    }
+})
+
+//Filter Based on Topic feild Ex: /blog-topic?t=tech
+router.get('/blogs-topic', userMiddleware, async (req, res) => {
     const topicTerm = req.query.t;
 
     try{

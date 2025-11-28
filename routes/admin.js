@@ -98,4 +98,25 @@ router.put('/update-blog/:blogId', adminMiddleware, async (req, res) => {
     }
 })
 
+//Deleting Blogs
+router.delete('/delete-blog/:blogId', adminMiddleware, async (req, res) => {
+    const blogId = req.params.blogId;
+
+    const blogExists = await Blogs.findById(blogId);
+    if(!blogExists){
+        res.status(400).json({
+            "msg": "Blog not found"
+        })
+    }
+    else{
+        const deletedBlog = await Blogs.deleteOne(
+            {_id: blogId}
+        )
+        console.log(deletedBlog);
+        res.status(200).json({
+            'msg': 'Removed the blog successfully!!!'
+        })
+    }
+})
+
 module.exports = router;
