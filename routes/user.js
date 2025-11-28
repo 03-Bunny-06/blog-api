@@ -1,0 +1,91 @@
+const {Router} = require("express");
+const jwt = require("jsonwebtoken");
+const router = Router();
+const { User, Blogs } = require("../db/index.js");
+const {JWT_KEY} = require('../config.js');
+
+//SignUp for User (creation of new User)
+router.post('/signup', async (req, res) => {
+    const username = req.headers.username;
+    const password = req.headers.password;
+
+    const userExists = await User.findOne({
+        username,
+        password
+    })
+
+    if(!userExists){
+        const userCreation = await User.create({
+            username: username,
+            password: password
+        })
+        res.status(200).json({
+            msg: "User created successfully!!"
+        })
+    }
+    else{
+        res.status(400).json({
+            msg: "User already exists try SignIn instead!!!"
+        })
+    }
+})
+
+//SignIn (logging in the existing User)
+router.post('/signin', async (req, res) => {
+    const username = req.headers.username;
+    const password = req.headers.password;
+
+    const adminExists = await User.findOne({
+        username,
+        password
+    })
+    if(!adminExists){
+        res.status(400).json({
+            msg: 'Invalid username or password'
+        })
+    }
+    else{
+        const authToken = jwt.sign({username}, JWT_KEY);
+        console.log(authToken);
+        res.status(200).json({
+            msg: 'Signed in successfully!!!'
+        })
+    }
+})
+
+//View All Blogs
+router.get('/blogs', async (req, res) => {
+    const viewBlogs = await Blogs.find({})
+    res.status(200).json({
+        "blogsData": viewBlogs
+    })
+})
+
+//Filter Based on Topic feild
+router.get('/blogs-topic', async (req, res) => {
+    const topicTerm = req.query.t;
+
+    try{
+        const topicBasedSearchData = await Blogs.find({
+            topic: topicTerm
+        })
+        if(topicBasedSearchData.length === 0){
+            res.status(404).json({
+                msg: 'No search results found'
+            })
+        }
+        else{
+            res.status(200).json({
+                "topicSearch": topicBasedSearchData
+            })
+        }
+    }
+    catch(e){
+        res.status(400).json({
+            msg: 'Invalid search topic term',
+            error: e.message
+        })
+    }
+})
+
+module.exports = router;
