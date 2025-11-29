@@ -108,4 +108,30 @@ router.get('/blogs-topic', userMiddleware, async (req, res) => {
     }
 })
 
+//Add to Favourites (Adding users Favourite Blogs)
+router.post('/add-favourite-blog/:blogId', userMiddleware, async (req, res) => {
+    const blogId = req.params.blogId;
+    const username = req.body.username;
+
+    const blogExists = await Blogs.findById(blogId);
+
+    if(!blogExists){
+        res.status(400).json({
+            'msg': 'Blog does not exists!!'
+        })
+    }
+    else{
+        const addingToFavourites = await User.updateOne(
+            username,
+            {
+                $push: {favouriteBlogs: blogId}
+            }
+        )
+        res.status(200).json({
+            "msg": "Added to Favourites Successfully!!"
+        })
+    }
+
+})
+
 module.exports = router;
