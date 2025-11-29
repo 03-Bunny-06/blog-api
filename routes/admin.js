@@ -75,7 +75,7 @@ router.post('/create-blog', adminMiddleware, async (req, res) => {
 })
 
 //Updating Blogs
-router.put('/update-blog/:blogId', adminMiddleware, async (req, res) => {
+router.put('/edit-blog/:blogId', adminMiddleware, async (req, res) => {
     const blogId = req.params.blogId;
     const blogExists = await Blogs.findById(blogId);
     console.log(blogExists);

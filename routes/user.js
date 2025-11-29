@@ -134,4 +134,29 @@ router.post('/add-favourite-blog/:blogId', userMiddleware, async (req, res) => {
 
 })
 
+//Show Favaourite Blogs of User (User can see their favourite blogs that they have marked as favourite)
+router.get('/my-favourite-blogs', userMiddleware, async (req, res) => {
+    const username = req.username;
+
+    const userExists = await User.findOne({
+        username
+    })
+
+    if(!userExists){
+        res.status(400).json({
+            "msg": "User does not exist!!"
+        })
+    }
+    else{
+        const favouriteBlog = await Blogs.find({
+            _id: {
+                $in: userExists.favouriteBlogs
+            }
+        })
+        res.status(200).json({
+            "favourite-blogs": favouriteBlog
+        })
+    }
+})
+
 module.exports = router;
