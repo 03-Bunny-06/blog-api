@@ -22,12 +22,12 @@ router.post('/signup', async (req, res) => {
             password
         })
         res.status(200).json({
-            msg: 'Admin created successfully!!!'
+            "msg": 'Admin created successfully!!!'
         })
     }
     else{
         res.status(400).json({
-            msg: 'Admin already exists try SignIn instead!!!'
+            "msg": 'Admin already exists try SignIn instead!!!'
         })
     }
 })
@@ -43,14 +43,15 @@ router.post('/signin', async (req, res) => {
     })
     if(!adminExists){
         res.status(400).json({
-            msg: 'Invalid username or password'
+            "msg": 'Invalid username or password'
         })
     }
     else{
         const authToken = jwt.sign({username}, JWT_KEY);
         console.log(authToken);
         res.status(200).json({
-            msg: 'Signed in successfully!!!'
+            "msg": 'Signed in successfully!!!',
+            "token": authToken
         })
     }
 })
