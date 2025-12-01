@@ -1,4 +1,5 @@
-require('dotenv').config();
+const env = require('dotenv')
+env.config();
 
 const dbUrl = process.env.DATABASE_URL;
 
