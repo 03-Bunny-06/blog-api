@@ -1,4 +1,4 @@
-# 🌐 Blog API (Node.js + Express + MongoDB)
+# 🌐 Blog API
 
 A complete **RESTful Blog API** built using **Node.js**, **Express**, and **MongoDB**, featuring **JWT authentication**, **role-based access**, and **favorite blog management**.  
 Designed for real-world backend workflows and fully deployable on cloud platforms like **Render**.
