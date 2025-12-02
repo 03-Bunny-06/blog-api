@@ -139,10 +139,12 @@ router.post('/add-favourite-blog/:blogId', userMiddleware, async (req, res) => {
 router.get('/my-favourite-blogs', userMiddleware, async (req, res) => {
     const username = req.username;
 
+    //Checks if the user exists in the User Collection/Table.
     const userExists = await User.findOne({
         username
     })
 
+    //If user doesnot exists in the collection this gets executed or else the control reaches the else block.
     if(!userExists){
         res.status(400).json({
             "msg": "User does not exist!!"
