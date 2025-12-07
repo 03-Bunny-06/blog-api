@@ -20,3 +20,16 @@ Designed for real-world backend workflows and fully deployable on cloud platform
 - [Deployment](#deployment)
 - [Author](#author)
 
+---
+
+## 📌 About the Project
+
+The **Blog API** helps users:
+
+- Sign up & log in securely  
+- Create, read, update, and delete blogs (Admin only)  
+- Add blogs to their favorites  
+- Fetch all favorite blogs  
+- Enjoy secure, token-based authentication  
+
+The API uses middleware to enforce **role-based authorization**, similar to production-ready backend applications.
