@@ -48,9 +48,8 @@ This API provides a complete backend for managing blogs with features including:
 - 📄 Create, Read, Update, Delete (CRUD) blog posts  
 - 💖 Add blogs to favorites  
 - 🔐 Protected routes with secure middleware  
-- ☁️ Easily deployable (e.g., Render, Heroku) :contentReference[oaicite:1]{index=1}
 
-Live demo: https://blog-api-cc47.onrender.com :contentReference[oaicite:2]{index=2}
+Live demo: https://blog-api-cc47.onrender.com 
 
 ---
 
