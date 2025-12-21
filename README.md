@@ -31,3 +31,17 @@ Live demo: https://blog-api-cc47.onrender.com
 
 ## 🏗 Project Structure
 
+blog-api/
+├── db/ # Database connection
+
+├── middlewares/ # Auth and error handlers
+
+├── routes/ # API route definitions
+
+├── index.js # App entry point
+
+├── config.js # Environment setup
+
+├── package.json
+
+└── .gitignore
