@@ -1,0 +1,516 @@
+{
+	"info": {
+		"_postman_id": "81aa2a7c-e097-45de-83b7-d2cdbc96fed2",
+		"name": "Blog API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39201744"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "username",
+								"value": "admin2",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "ADMIN1234",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://blog-api-cc47.onrender.com/admin/signup",
+							"protocol": "https",
+							"host": [
+								"blog-api-cc47",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"admin",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignIn",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "username",
+								"value": "admin2",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "ADMIN1234",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://blog-api-cc47.onrender.com/admin/signin",
+							"protocol": "https",
+							"host": [
+								"blog-api-cc47",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"admin",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Blog",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "username",
+								"value": "admin2",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "ADMIN1234",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Does Aliens really exist ?\",\r\n    \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\r\n    \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\r\n    \"topic\": \"science\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://blog-api-cc47.onrender.com/admin/create-blog",
+							"protocol": "https",
+							"host": [
+								"blog-api-cc47",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"admin",
+								"create-blog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Blog",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "username",
+								"value": "admin2",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "ADMIN1234",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The Great Tech Infrastructure of 2025!\",\r\n    \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://blog-api-cc47.onrender.com/admin/edit-blog/6929b06d8c75ac139670d7fb",
+							"protocol": "https",
+							"host": [
+								"blog-api-cc47",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"admin",
+								"edit-blog",
+								"6929b06d8c75ac139670d7fb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Blog",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "username",
+								"value": "admin2",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "ADMIN1234",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://blog-api-cc47.onrender.com/admin/delete-blog/697641985afda2dca12c2a44",
+							"protocol": "https",
+							"host": [
+								"blog-api-cc47",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"admin",
+								"delete-blog",
+								"697641985afda2dca12c2a44"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "username",
+								"value": "number3.dev123",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "n3.dev123",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://blog-api-cc47.onrender.com/user/signup",
+							"protocol": "https",
+							"host": [
+								"blog-api-cc47",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignIn",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "username",
+								"value": "number3.dev123",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "n3.dev123",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"User 2\",\r\n    \"password\": \"password2\"\r\n}"
+						},
+						"url": {
+							"raw": "https://blog-api-cc47.onrender.com/user/signin",
+							"protocol": "https",
+							"host": [
+								"blog-api-cc47",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"user",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Blogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://blog-api-cc47.onrender.com/user/blogs",
+							"protocol": "https",
+							"host": [
+								"blog-api-cc47",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"user",
+								"blogs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Specific Blog",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "username",
+								"value": "number3.dev123",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "n3.dev123",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjMuZGV2MTIzIiwiaWF0IjoxNzY5MzUxMTA3fQ.FdeuiEMn1Vd8xM3rFc8JWa7OZxlCmdQl_NN4O2ufL18",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://blog-api-cc47.onrender.com/user/blogs/6929866b3de2a4f78e6eed47",
+							"protocol": "https",
+							"host": [
+								"blog-api-cc47",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"user",
+								"blogs",
+								"6929866b3de2a4f78e6eed47"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Blog Topic Based Filtering",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "username",
+								"value": "number3.dev123",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "n3.dev123",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjMuZGV2MTIzIiwiaWF0IjoxNzY5MzUxMTA3fQ.FdeuiEMn1Vd8xM3rFc8JWa7OZxlCmdQl_NN4O2ufL18",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://blog-api-cc47.onrender.com/user/blogs-topic?t=science",
+							"protocol": "https",
+							"host": [
+								"blog-api-cc47",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"user",
+								"blogs-topic"
+							],
+							"query": [
+								{
+									"key": "t",
+									"value": "science"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add to Favourite Blogs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "username",
+								"value": "number3.dev123",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "n3.dev123",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjMuZGV2MTIzIiwiaWF0IjoxNzY5MzUxMTA3fQ.FdeuiEMn1Vd8xM3rFc8JWa7OZxlCmdQl_NN4O2ufL18",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://blog-api-cc47.onrender.com/user/add-favourite-blog/69298805823e75e59157038f",
+							"protocol": "https",
+							"host": [
+								"blog-api-cc47",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"user",
+								"add-favourite-blog",
+								"69298805823e75e59157038f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Favourite Blogs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "username",
+								"value": "number3.dev123",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "n3.dev123",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjMuZGV2MTIzIiwiaWF0IjoxNzY5MzUxMTA3fQ.FdeuiEMn1Vd8xM3rFc8JWa7OZxlCmdQl_NN4O2ufL18",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"User 2\",\r\n    \"password\": \"password2\"\r\n}"
+						},
+						"url": {
+							"raw": "https://blog-api-cc47.onrender.com/user/my-favourite-blogs",
+							"protocol": "https",
+							"host": [
+								"blog-api-cc47",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"user",
+								"my-favourite-blogs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pagination With Limit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://blog-api-cc47.onrender.com/user/blogs?page=1&limit=5",
+							"protocol": "https",
+							"host": [
+								"blog-api-cc47",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"user",
+								"blogs"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
