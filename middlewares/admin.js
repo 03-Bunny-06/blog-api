@@ -6,9 +6,9 @@ const adminMiddleware = (req, res, next) => {
     const splitToken = token.split(" ");
     const rawToken = splitToken[1];
 
-    const decodedAndVerifiedToken = jwt.verify(rawToken, JWT_KEY);
-
     try{
+        const decodedAndVerifiedToken = jwt.verify(rawToken, JWT_KEY);
+
         if(decodedAndVerifiedToken.username){
             req.username = decodedAndVerifiedToken.username;
             next();

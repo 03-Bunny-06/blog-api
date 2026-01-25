@@ -7,9 +7,9 @@ const userMiddleware = (req, res, next) => {
     const rawToken = splitToken[1];
     console.log(rawToken);
 
-    const decodedAndVerifiedToken = jwt.verify(rawToken, JWT_KEY);
-
     try{
+        const decodedAndVerifiedToken = jwt.verify(rawToken, JWT_KEY);
+
         if(decodedAndVerifiedToken.username){
             req.username = decodedAndVerifiedToken.username;
             next();

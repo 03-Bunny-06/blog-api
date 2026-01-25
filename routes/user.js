@@ -55,12 +55,68 @@ router.post('/signin', async (req, res) => {
     }
 })
 
-//View All Blogs
+//Pagination with pages and limit of number of entries to fetch for each page if page 2 is asked with limit 5 then we must
+//skip the first 5 documents/entries from 0-4 and then return 5-10 entries as question is asked for page 2 with limit 5
+//Pagination with Pages and Limit
+
+//Performs both viewing all blogs or pagination with limit in the same API
 router.get('/blogs', async (req, res) => {
-    const viewBlogs = await Blogs.find({})
-    res.status(200).json({
-        "blogsData": viewBlogs
-    })
+    try{
+        const p = req.query.page;
+        const l = req.query.limit;
+        console.log({p, l});
+
+        const hasPagination = (p != (undefined || NaN || '') && l != (undefined || NaN || ''));
+        console.log(hasPagination);
+
+        //Making sure the valid number is not a negative number so there would be an issue to fetch the pages with limit.
+        if (hasPagination){
+            globalThis.page = Math.max(1, parseInt(p));
+            globalThis.limit = Math.max(1, parseInt(l));
+            console.log({page, limit})
+        }
+
+        const totalBlogs = await Blogs.countDocuments({});
+        const totalPages = Math.ceil(totalBlogs/limit);
+
+        let query = Blogs.find();
+
+        //Here if the page we were trying to query is 5 but only 3 pages exist that gives an Falsy Value and in the same way if there are no documents
+        //in the Collection the 0 would bu the totalBlogs that would not be greater than 0 that gives Falsy Value both these cases might give a
+        //issue while trying to query so these cases are important.
+        
+        //Skip is used to skip the number of pages if the given page is above 1
+        //For page = 1 limit = 5 it would be (1-1) * 5 = 0 so no skip straight up need to fetch the first five blogs.
+
+        if (hasPagination){
+            if (page > totalPages && totalBlogs > 0){
+                return res.status(400).json({
+                    'error': 'The page does not exist!'
+                })
+            }
+
+            const skip = (page - 1) * limit; 
+            query = query.skip(skip).limit(limit);
+            console.log({ page, limit, skip });
+        }
+
+        const blogsData = await query;
+
+        res.status(200).json({
+            'totalBlogs': totalBlogs,
+            ...(page && limit && {
+                'msg': 'Pagination Succcessful',
+                'currentPage': page,
+                'totalPages': totalPages
+            })
+            ,'blogsData': blogsData
+        })
+    }
+    catch (e){
+        res.status(500).json({
+            'error': e.message
+        })
+    }
 })
 
 //View Specific Blog
@@ -103,33 +159,41 @@ router.get('/blogs-topic', userMiddleware, async (req, res) => {
     }
     catch(e){
         res.status(400).json({
-            msg: 'Invalid search topic term',
-            error: e.message
+            "msg": 'Invalid search topic term',
+            "error": e.message
         })
     }
 })
 
 //Add to Favourites (Adding users Favourite Blogs)
 router.post('/add-favourite-blog/:blogId', userMiddleware, async (req, res) => {
-    const blogId = req.params.blogId;
-    const username = req.body.username;
+    try{
+        const blogId = req.params.blogId;
+        const username = req.username;
+        console.log(username);
 
-    const blogExists = await Blogs.findById(blogId);
+        const blogExists = await Blogs.findById(blogId);
 
-    if(!blogExists){
-        res.status(400).json({
-            'msg': 'Blog does not exists!!'
-        })
+        if(!blogExists){
+            return res.status(400).json({
+                'msg': 'Blog does not exists!!'
+            })
+        }
+        else{
+            const addingToFavourites = await User.updateOne(
+                {username},
+                {
+                    $push: {favouriteBlogs: blogId}
+                }
+            )
+            res.status(200).json({
+                "msg": "Added to Favourites Successfully!!"
+            })
+        }
     }
-    else{
-        const addingToFavourites = await User.updateOne(
-            username,
-            {
-                $push: {favouriteBlogs: blogId}
-            }
-        )
-        res.status(200).json({
-            "msg": "Added to Favourites Successfully!!"
+    catch(e){
+        res.status(500).json({
+            "error": e.message
         })
     }
 
@@ -138,6 +202,7 @@ router.post('/add-favourite-blog/:blogId', userMiddleware, async (req, res) => {
 //Show Favaourite Blogs of User (User can see their favourite blogs that they have marked as favourite)
 router.get('/my-favourite-blogs', userMiddleware, async (req, res) => {
     const username = req.username;
+    console.log(username);
 
     //Checks if the user exists in the User Collection/Table.
     const userExists = await User.findOne({
@@ -157,9 +222,11 @@ router.get('/my-favourite-blogs', userMiddleware, async (req, res) => {
             }
         })
         res.status(200).json({
-            "favourite-blogs": favouriteBlog
+            "favouriteBlogs": favouriteBlog
         })
     }
 })
+
+
 
 module.exports = router;

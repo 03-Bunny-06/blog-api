@@ -12,8 +12,7 @@ router.post('/signup', async (req, res) => {
     const password = req.headers.password;
 
     const adminExists = await Admin.findOne({
-        username,
-        password
+        username
     })
 
     if(!adminExists){
