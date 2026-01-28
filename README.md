@@ -1,6 +1,6 @@
 # Blog API 🚀
 
-**A fully functional RESTful Blog Management API** built with **Node.js, Express, and MongoDB**, featuring **JWT authentication**, **role-based access control**, and **favorites blog management** — ready for real-world backend workflows and cloud deployment. :contentReference[oaicite:0]{index=0}
+**A fully functional RESTful Blog Management API** built with **Node.js, Express, and MongoDB**, featuring **JWT authentication**, **role-based access control**, and **favorites blog management** — ready for real-world backend workflows and cloud deployment.
 
 ---
 
