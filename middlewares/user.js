@@ -3,15 +3,16 @@ const jwt = require("jsonwebtoken");
 
 const userMiddleware = (req, res, next) => {
     const token = req.headers.authorization;
-    const splitToken = token.split(" ");
-    const rawToken = splitToken[1];
-    console.log(rawToken);
-
-    if(!rawToken){
+    
+    if(token === undefined || token.length === 0){
         res.status(401).json({
             msg: 'Authorization header missing!'
         })
     }
+    
+    const splitToken = token.split(" ");
+    const rawToken = splitToken[1];
+    console.log(rawToken);
 
     try{
         const decodedAndVerifiedToken = jwt.verify(rawToken, JWT_KEY);
