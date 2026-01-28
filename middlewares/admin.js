@@ -9,14 +9,17 @@ const adminMiddleware = (req, res, next) => {
     try{
         const decodedAndVerifiedToken = jwt.verify(rawToken, JWT_KEY);
 
-        if(decodedAndVerifiedToken.username){
-            req.username = decodedAndVerifiedToken.username;
-            next();
-        }
-        else{
+        const decodedUsername = decodedAndVerifiedToken.username
+
+        if(!decodedUsername){
             res.status(400).json({
                 msg: 'Username not found in the token'
             })
+        }
+
+        else{
+            req.username = decodedAndVerifiedToken.username;
+            next();
         }
     }
     catch(e){
