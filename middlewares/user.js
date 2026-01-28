@@ -7,11 +7,19 @@ const userMiddleware = (req, res, next) => {
     const rawToken = splitToken[1];
     console.log(rawToken);
 
+    if(!rawToken){
+        res.status(401).json({
+            msg: 'Authorization header missing!'
+        })
+    }
+
     try{
         const decodedAndVerifiedToken = jwt.verify(rawToken, JWT_KEY);
 
-        if(decodedAndVerifiedToken.username){
-            req.username = decodedAndVerifiedToken.username;
+        const decodedUsername = decodedAndVerifiedToken.username
+
+        if(decodedUsername){
+            req.username = decodedUsername;
             next();
         }
         else{
