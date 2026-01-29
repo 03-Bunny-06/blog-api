@@ -1,516 +1,3492 @@
 {
-	"info": {
-		"_postman_id": "81aa2a7c-e097-45de-83b7-d2cdbc96fed2",
-		"name": "Blog API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "39201744"
-	},
-	"item": [
-		{
-			"name": "Admin",
-			"item": [
-				{
-					"name": "SignUp",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "username",
-								"value": "admin2",
-								"type": "text"
-							},
-							{
-								"key": "password",
-								"value": "ADMIN1234",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "https://blog-api-cc47.onrender.com/admin/signup",
-							"protocol": "https",
-							"host": [
-								"blog-api-cc47",
-								"onrender",
-								"com"
-							],
-							"path": [
-								"admin",
-								"signup"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "SignIn",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "username",
-								"value": "admin2",
-								"type": "text"
-							},
-							{
-								"key": "password",
-								"value": "ADMIN1234",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "https://blog-api-cc47.onrender.com/admin/signin",
-							"protocol": "https",
-							"host": [
-								"blog-api-cc47",
-								"onrender",
-								"com"
-							],
-							"path": [
-								"admin",
-								"signin"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create Blog",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "username",
-								"value": "admin2",
-								"type": "text"
-							},
-							{
-								"key": "password",
-								"value": "ADMIN1234",
-								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Does Aliens really exist ?\",\r\n    \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\r\n    \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\r\n    \"topic\": \"science\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://blog-api-cc47.onrender.com/admin/create-blog",
-							"protocol": "https",
-							"host": [
-								"blog-api-cc47",
-								"onrender",
-								"com"
-							],
-							"path": [
-								"admin",
-								"create-blog"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Edit Blog",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "username",
-								"value": "admin2",
-								"type": "text"
-							},
-							{
-								"key": "password",
-								"value": "ADMIN1234",
-								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"The Great Tech Infrastructure of 2025!\",\r\n    \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://blog-api-cc47.onrender.com/admin/edit-blog/6929b06d8c75ac139670d7fb",
-							"protocol": "https",
-							"host": [
-								"blog-api-cc47",
-								"onrender",
-								"com"
-							],
-							"path": [
-								"admin",
-								"edit-blog",
-								"6929b06d8c75ac139670d7fb"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Blog",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "username",
-								"value": "admin2",
-								"type": "text"
-							},
-							{
-								"key": "password",
-								"value": "ADMIN1234",
-								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "https://blog-api-cc47.onrender.com/admin/delete-blog/697641985afda2dca12c2a44",
-							"protocol": "https",
-							"host": [
-								"blog-api-cc47",
-								"onrender",
-								"com"
-							],
-							"path": [
-								"admin",
-								"delete-blog",
-								"697641985afda2dca12c2a44"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Users",
-			"item": [
-				{
-					"name": "SignUp",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "username",
-								"value": "number3.dev123",
-								"type": "text"
-							},
-							{
-								"key": "password",
-								"value": "n3.dev123",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://blog-api-cc47.onrender.com/user/signup",
-							"protocol": "https",
-							"host": [
-								"blog-api-cc47",
-								"onrender",
-								"com"
-							],
-							"path": [
-								"user",
-								"signup"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "SignIn",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "username",
-								"value": "number3.dev123",
-								"type": "text"
-							},
-							{
-								"key": "password",
-								"value": "n3.dev123",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"User 2\",\r\n    \"password\": \"password2\"\r\n}"
-						},
-						"url": {
-							"raw": "https://blog-api-cc47.onrender.com/user/signin",
-							"protocol": "https",
-							"host": [
-								"blog-api-cc47",
-								"onrender",
-								"com"
-							],
-							"path": [
-								"user",
-								"signin"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "All Blogs",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://blog-api-cc47.onrender.com/user/blogs",
-							"protocol": "https",
-							"host": [
-								"blog-api-cc47",
-								"onrender",
-								"com"
-							],
-							"path": [
-								"user",
-								"blogs"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "View Specific Blog",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "username",
-								"value": "number3.dev123",
-								"type": "text"
-							},
-							{
-								"key": "password",
-								"value": "n3.dev123",
-								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjMuZGV2MTIzIiwiaWF0IjoxNzY5MzUxMTA3fQ.FdeuiEMn1Vd8xM3rFc8JWa7OZxlCmdQl_NN4O2ufL18",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "https://blog-api-cc47.onrender.com/user/blogs/6929866b3de2a4f78e6eed47",
-							"protocol": "https",
-							"host": [
-								"blog-api-cc47",
-								"onrender",
-								"com"
-							],
-							"path": [
-								"user",
-								"blogs",
-								"6929866b3de2a4f78e6eed47"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Blog Topic Based Filtering",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "username",
-								"value": "number3.dev123",
-								"type": "text"
-							},
-							{
-								"key": "password",
-								"value": "n3.dev123",
-								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjMuZGV2MTIzIiwiaWF0IjoxNzY5MzUxMTA3fQ.FdeuiEMn1Vd8xM3rFc8JWa7OZxlCmdQl_NN4O2ufL18",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "https://blog-api-cc47.onrender.com/user/blogs-topic?t=science",
-							"protocol": "https",
-							"host": [
-								"blog-api-cc47",
-								"onrender",
-								"com"
-							],
-							"path": [
-								"user",
-								"blogs-topic"
-							],
-							"query": [
-								{
-									"key": "t",
-									"value": "science"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add to Favourite Blogs",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "username",
-								"value": "number3.dev123",
-								"type": "text"
-							},
-							{
-								"key": "password",
-								"value": "n3.dev123",
-								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjMuZGV2MTIzIiwiaWF0IjoxNzY5MzUxMTA3fQ.FdeuiEMn1Vd8xM3rFc8JWa7OZxlCmdQl_NN4O2ufL18",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://blog-api-cc47.onrender.com/user/add-favourite-blog/69298805823e75e59157038f",
-							"protocol": "https",
-							"host": [
-								"blog-api-cc47",
-								"onrender",
-								"com"
-							],
-							"path": [
-								"user",
-								"add-favourite-blog",
-								"69298805823e75e59157038f"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "View Favourite Blogs",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "username",
-								"value": "number3.dev123",
-								"type": "text"
-							},
-							{
-								"key": "password",
-								"value": "n3.dev123",
-								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjMuZGV2MTIzIiwiaWF0IjoxNzY5MzUxMTA3fQ.FdeuiEMn1Vd8xM3rFc8JWa7OZxlCmdQl_NN4O2ufL18",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"User 2\",\r\n    \"password\": \"password2\"\r\n}"
-						},
-						"url": {
-							"raw": "https://blog-api-cc47.onrender.com/user/my-favourite-blogs",
-							"protocol": "https",
-							"host": [
-								"blog-api-cc47",
-								"onrender",
-								"com"
-							],
-							"path": [
-								"user",
-								"my-favourite-blogs"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Pagination With Limit",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://blog-api-cc47.onrender.com/user/blogs?page=1&limit=5",
-							"protocol": "https",
-							"host": [
-								"blog-api-cc47",
-								"onrender",
-								"com"
-							],
-							"path": [
-								"user",
-								"blogs"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "1"
-								},
-								{
-									"key": "limit",
-									"value": "5"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		}
-	]
+  "info": {
+    "_postman_id": "81aa2a7c-e097-45de-83b7-d2cdbc96fed2",
+    "name": "Blog API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "39201744"
+  },
+  "item": [
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "SignUp",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "username",
+                "value": "admin4",
+                "type": "text"
+              },
+              {
+                "key": "password",
+                "value": "ADMIN1234",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://blog-api-cc47.onrender.com/admin/signup",
+              "protocol": "https",
+              "host": [
+                "blog-api-cc47",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "admin",
+                "signup"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "username",
+                    "value": "admin5",
+                    "type": "text"
+                  },
+                  {
+                    "key": "password",
+                    "value": "ADMIN1233",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/admin/signup",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "admin",
+                    "signup"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 28 Jan 2026 12:12:48 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "43"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c50666fcb9608b7-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"27-P7SFo1TfO/VwdkLj6FThNnQp1B8\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "77d16194-ca9d-4724"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Admin created successfully!!!\"\n}"
+            },
+            {
+              "name": "Bad Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "username",
+                    "value": "admin4",
+                    "type": "text"
+                  },
+                  {
+                    "key": "password",
+                    "value": "ADMIN1234",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/admin/signup",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "admin",
+                    "signup"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 28 Jan 2026 12:12:16 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "56"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c5065224ae608b7-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"34-Wgm6iSsgQoYY1WREhZZDmka9XW4\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "dc50bb89-517a-4fe8"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Admin already exists try SignIn instead!!!\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "SignIn",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "username",
+                "value": "admin2",
+                "type": "text"
+              },
+              {
+                "key": "password",
+                "value": "ADMIN123",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://blog-api-cc47.onrender.com/admin/signin",
+              "protocol": "https",
+              "host": [
+                "blog-api-cc47",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "admin",
+                "signin"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "username",
+                    "value": "admin2",
+                    "type": "text"
+                  },
+                  {
+                    "key": "password",
+                    "value": "ADMIN1234",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/admin/signin",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "admin",
+                    "signin"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 28 Jan 2026 12:14:16 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "158"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c506894cb33dc75-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"b2-2R7AkK9TA9Ok9mjMTzxw8MKZBnM\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "c6ff6902-613e-4142"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Signed in successfully!!!\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTYwMjQ1Nn0.qi3TR4GOaLTXiS7ncvIyCYrQWzIOhEuBxfRszADXPXs\"\n}"
+            },
+            {
+              "name": "Bad Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "username",
+                    "value": "admin2",
+                    "type": "text"
+                  },
+                  {
+                    "key": "password",
+                    "value": "ADMIN123",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/admin/signin",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "admin",
+                    "signin"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 28 Jan 2026 12:14:34 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "42"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c5069045c0bdc75-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"26-6fBeHvHa0EobeJEi7uzrM/GJksw\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "29666d24-3e80-4127"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Invalid username or password\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Blog",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"How to get a good tech job in 2026?\",\r\n    \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\r\n    \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\r\n    \"topic\": \"tech\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://blog-api-cc47.onrender.com/admin/create-blog",
+              "protocol": "https",
+              "host": [
+                "blog-api-cc47",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "admin",
+                "create-blog"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "username",
+                    "value": "admin2",
+                    "type": "text"
+                  },
+                  {
+                    "key": "password",
+                    "value": "ADMIN1234",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"How to get a good tech job in 2026?\",\r\n    \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\r\n    \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\r\n    \"topic\": \"tech\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/admin/create-blog",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "admin",
+                    "create-blog"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 28 Jan 2026 12:30:12 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "42"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c507f69abfa79f5-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"26-oqlJe6xFReu6w7/ryMBtIyJ2qYs\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "16b2d4f6-fb2d-4691"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Blog created successfully!!!\"\n}"
+            },
+            {
+              "name": "Invalid Auth Token",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqW",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"How to get a good tech job in 2026?\",\r\n    \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\r\n    \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\r\n    \"topic\": \"tech\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/admin/create-blog",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "admin",
+                    "create-blog"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 28 Jan 2026 12:55:25 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "51"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c50a4e178ad5924-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"34-S0PzxGUcUMhh9HTXYRfWzDRiaK8\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "d8b093e6-9c95-4d3f"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Invalid Inputs\",\n    \"error\": \"invalid signature\"\n}"
+            },
+            {
+              "name": "Auth Token Missing",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss",
+                    "type": "text",
+                    "disabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"How to get a good tech job in 2026?\",\r\n    \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\r\n    \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\r\n    \"topic\": \"tech\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/admin/create-blog",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "admin",
+                    "create-blog"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 28 Jan 2026 13:17:51 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "43"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c50c54e9a4c41e5-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"27-wtLXfwROJG7VIsbROvQorPY6YlI\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "a20ea580-3e91-4100"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Authorization header missing!\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Edit Blog",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"The Great Tech Infrastructure of 2025!\",\r\n    \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://blog-api-cc47.onrender.com/admin/edit-blog/6929b06d8c75ac139670d7fb",
+              "protocol": "https",
+              "host": [
+                "blog-api-cc47",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "admin",
+                "edit-blog",
+                "6929b06d8c75ac139670d7fb"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Updation",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"The Great Tech Infrastructure of 2025!\",\r\n    \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/admin/edit-blog/6929b06d8c75ac139670d7fb",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "admin",
+                    "edit-blog",
+                    "6929b06d8c75ac139670d7fb"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 28 Jan 2026 13:21:44 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "44"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c50cb63eb0479ee-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"28-CmnLElLjo2gFt4MzydKYM/5WLr8\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "4a52da3b-b8a9-4318"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Updated the blog successfully!\"\n}"
+            },
+            {
+              "name": "Invalid Blog ID",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"The Great Tech Infrastructure of 2025!\",\r\n    \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/admin/edit-blog/6929b06d8c75ac13967",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "admin",
+                    "edit-blog",
+                    "6929b06d8c75ac13967"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 04:17:58 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "47"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c55ec423adc8cb2-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"2f-t66VnUhhPskb8nIp16RamAJEimU\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "dd93e9dc-60bb-4a60"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Invalid BlogID (or) BlogID not found!\"\n}"
+            },
+            {
+              "name": "Invalid Auth Token",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0a",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"The Great Tech Infrastructure of 2025!\",\r\n    \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/admin/edit-blog/6929b06d8c75ac139670d7fb",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "admin",
+                    "edit-blog",
+                    "6929b06d8c75ac139670d7fb"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 04:21:10 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "51"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c55f0f2381f29b7-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"34-S0PzxGUcUMhh9HTXYRfWzDRiaK8\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "f24fdf3e-1699-4e84"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Invalid Inputs\",\n    \"error\": \"invalid signature\"\n}"
+            },
+            {
+              "name": "Auth Token Missing",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss",
+                    "type": "text",
+                    "disabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"The Great Tech Infrastructure of 2025!\",\r\n    \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/admin/edit-blog/6929b06d8c75ac139670d7fb",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "admin",
+                    "edit-blog",
+                    "6929b06d8c75ac139670d7fb"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 04:19:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "43"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c55ee739eb7dc75-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"27-wtLXfwROJG7VIsbROvQorPY6YlI\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "57582fdf-5bd8-4533"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Authorization header missing!\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Blog",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "username",
+                "value": "admin2",
+                "type": "text"
+              },
+              {
+                "key": "password",
+                "value": "ADMIN1234",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://blog-api-cc47.onrender.com/admin/delete-blog/692987ba823e75e59157038d",
+              "protocol": "https",
+              "host": [
+                "blog-api-cc47",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "admin",
+                "delete-blog",
+                "692987ba823e75e59157038d"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Deletion",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "username",
+                    "value": "admin2",
+                    "type": "text"
+                  },
+                  {
+                    "key": "password",
+                    "value": "ADMIN1234",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/admin/delete-blog/692987ba823e75e59157038d",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "admin",
+                    "delete-blog",
+                    "692987ba823e75e59157038d"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 04:23:37 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "44"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c55f4839b3221ba-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"28-f3uB+ijBwRfIxs95FPQRS8ETxgo\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "701888ee-10f2-4751"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Removed the blog successfully!\"\n}"
+            },
+            {
+              "name": "Invalid Blog ID",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "username",
+                    "value": "admin2",
+                    "type": "text"
+                  },
+                  {
+                    "key": "password",
+                    "value": "ADMIN1234",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/admin/delete-blog/692987ba823e75e5915703",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "admin",
+                    "delete-blog",
+                    "692987ba823e75e5915703"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 04:24:22 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "47"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c55f5a2bb1b21ba-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"2f-t66VnUhhPskb8nIp16RamAJEimU\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "85545ddc-896a-4806"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Invalid BlogID (or) BlogID not found!\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "SignUp",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "username",
+                "value": "number4.dev",
+                "type": "text"
+              },
+              {
+                "key": "password",
+                "value": "n4.dev123",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://blog-api-cc47.onrender.com/user/signup",
+              "protocol": "https",
+              "host": [
+                "blog-api-cc47",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "user",
+                "signup"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "username",
+                    "value": "number4.dev",
+                    "type": "text"
+                  },
+                  {
+                    "key": "password",
+                    "value": "n4.dev123",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/user/signup",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "user",
+                    "signup"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 05:34:12 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "40"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c565bed2c2979ef-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"24-GS9ZkRlQWaaM0laoy5lry1MO7TU\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "20ee6f0a-f60a-47f0"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"User created successfully!\"\n}"
+            },
+            {
+              "name": "Bad Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "username",
+                    "value": "number1.dev",
+                    "type": "text"
+                  },
+                  {
+                    "key": "password",
+                    "value": "n1.dev123",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/user/signup",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "user",
+                    "signup"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 05:33:19 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "55"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c565a1b7ba4d81d-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"33-f1WyNTRqh79sjnCXJ/SfXPag7GY\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "6eb06906-352b-4a71"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"User already exists try (SignIn) instead!\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "SignIn",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "username",
+                "value": "number1.dev",
+                "type": "text"
+              },
+              {
+                "key": "password",
+                "value": "n1.dev123",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"User 2\",\r\n    \"password\": \"password2\"\r\n}"
+            },
+            "url": {
+              "raw": "https://blog-api-cc47.onrender.com/user/signin",
+              "protocol": "https",
+              "host": [
+                "blog-api-cc47",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "user",
+                "signin"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "username",
+                    "value": "number1.dev",
+                    "type": "text"
+                  },
+                  {
+                    "key": "password",
+                    "value": "n1.dev123",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"username\": \"User 2\",\r\n    \"password\": \"password2\"\r\n}"
+                },
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/user/signin",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "user",
+                    "signin"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 05:35:13 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "165"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c565d697c487b7a-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"b9-qkjlyi+GZ14NAOkjMiurzs77mCE\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "0b1de6b0-f4ef-4e53"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Signed in successfully!!!\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU\"\n}"
+            },
+            {
+              "name": "Bad Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "username",
+                    "value": "number1.dev",
+                    "type": "text",
+                    "disabled": true
+                  },
+                  {
+                    "key": "password",
+                    "value": "n1.dev123",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"username\": \"User 2\",\r\n    \"password\": \"password2\"\r\n}"
+                },
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/user/signin",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "user",
+                    "signin"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 05:35:53 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "43"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c565e6518817b7a-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"27-yobfxnp0hg5Gf/iV24945IQkR2U\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "ee3c305d-dfab-4432"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Invalid username or password!\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "All Blogs",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "username",
+                "value": "number3.dev123",
+                "type": "text"
+              },
+              {
+                "key": "password",
+                "value": "n3.dev123",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjMuZGV2MTIzIiwiaWF0IjoxNzY5MzUxMTA3fQ.FdeuiEMn1Vd8xM3rFc8JWa7OZxlCmdQl_NN4O2ufL18",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://blog-api-cc47.onrender.com/user/blogs",
+              "protocol": "https",
+              "host": [
+                "blog-api-cc47",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "user",
+                "blogs"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/user/blogs",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "user",
+                    "blogs"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 05:36:47 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "668"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c565fb48cb57b7a-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"1190-SQEooKsXbGyT9tdsrA6uqeqyFuY\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "5c9f544a-b871-4780"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"totalBlogs\": 11,\n    \"blogsData\": [\n        {\n            \"_id\": \"6929865e3de2a4f78e6eed45\",\n            \"title\": \"How to become a Python Full Stack Dev in (2025)\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6929866b3de2a4f78e6eed47\",\n            \"title\": \"How to become a Full Stack Dev in (2025)\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"692986bb823e75e591570385\",\n            \"title\": \"How to become a Java Full Stack Dev in (2025)\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69298713823e75e591570387\",\n            \"title\": \"Will the sun explode in 5 billion years\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69298761823e75e591570389\",\n            \"title\": \"How to make coding more interesting\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6929879c823e75e59157038b\",\n            \"title\": \"Is ATLAS 3I an interstellar comet or an UFO\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69298805823e75e59157038f\",\n            \"title\": \"Did NASA really land on moon or is it\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6929b06d8c75ac139670d7fb\",\n            \"title\": \"The Great Tech Infrastructure of 2025!\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69763c765afda2dca12c2a3e\",\n            \"title\": \"Tech that changed the dynamics of 2025!\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"697641935afda2dca12c2a42\",\n            \"title\": \"Does Aliens really exist ?\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"697a01541d612a03813bf1ce\",\n            \"title\": \"How to get a good tech job in 2026?\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "View Specific Blog",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://blog-api-cc47.onrender.com/user/blogs/697a01541d612a03813bf1ce",
+              "protocol": "https",
+              "host": [
+                "blog-api-cc47",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "user",
+                "blogs",
+                "697a01541d612a03813bf1ce"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/user/blogs/697a01541d612a03813bf1ce",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "user",
+                    "blogs",
+                    "697a01541d612a03813bf1ce"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 05:39:31 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "318"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c5663b7ebee41e5-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"1ba-PD5OhRPa/UaDuFlxWrs/kFMlAoo\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "0cc80901-2a21-4a21"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"The specific blog found!\",\n    \"blog\": {\n        \"_id\": \"697a01541d612a03813bf1ce\",\n        \"title\": \"How to get a good tech job in 2026?\",\n        \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n        \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n        \"topic\": \"tech\",\n        \"__v\": 0\n    }\n}"
+            },
+            {
+              "name": "Invalid Blog ID",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/user/blogs/697a01541d612a03813b",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "user",
+                    "blogs",
+                    "697a01541d612a03813b"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 05:39:09 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "47"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c566330cb7341e5-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"2f-t66VnUhhPskb8nIp16RamAJEimU\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "2032b5db-8d28-4406"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Invalid BlogID (or) BlogID not found!\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Blog Topic Based Filtering",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjMuZGV2MTIzIiwiaWF0IjoxNzY5MzUxMTA3fQ.FdeuiEMn1Vd8xM3rFc8JWa7OZxlCmdQl_NN4O2ufL18",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://blog-api-cc47.onrender.com/user/blogs-topic?t=science",
+              "protocol": "https",
+              "host": [
+                "blog-api-cc47",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "user",
+                "blogs-topic"
+              ],
+              "query": [
+                {
+                  "key": "t",
+                  "value": "science"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response For Tech Topic Term",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjMuZGV2MTIzIiwiaWF0IjoxNzY5MzUxMTA3fQ.FdeuiEMn1Vd8xM3rFc8JWa7OZxlCmdQl_NN4O2ufL18",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/user/blogs-topic?t=tech",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "user",
+                    "blogs-topic"
+                  ],
+                  "query": [
+                    {
+                      "key": "t",
+                      "value": "tech"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 05:46:45 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "461"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c566e50680321ba-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"99c-7OhxMAuHGadlRiQE7ciNGX2INRA\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "e21d4a44-2bde-4ae0"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"searchedTopicData\": [\n        {\n            \"_id\": \"6929865e3de2a4f78e6eed45\",\n            \"title\": \"How to become a Python Full Stack Dev in (2025)\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6929866b3de2a4f78e6eed47\",\n            \"title\": \"How to become a Full Stack Dev in (2025)\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"692986bb823e75e591570385\",\n            \"title\": \"How to become a Java Full Stack Dev in (2025)\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69298761823e75e591570389\",\n            \"title\": \"How to make coding more interesting\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69763c765afda2dca12c2a3e\",\n            \"title\": \"Tech that changed the dynamics of 2025!\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"697a01541d612a03813bf1ce\",\n            \"title\": \"How to get a good tech job in 2026?\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        }\n    ]\n}"
+            },
+            {
+              "name": "Successful Response For Science Topic Term",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjMuZGV2MTIzIiwiaWF0IjoxNzY5MzUxMTA3fQ.FdeuiEMn1Vd8xM3rFc8JWa7OZxlCmdQl_NN4O2ufL18",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/user/blogs-topic?t=science",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "user",
+                    "blogs-topic"
+                  ],
+                  "query": [
+                    {
+                      "key": "t",
+                      "value": "science"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 05:47:24 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "471"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c566f451ccd21ba-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"803-qPz9kvjqW6LII77FxQ3F9/DoK9o\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "0144316f-365f-4d50"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"searchedTopicData\": [\n        {\n            \"_id\": \"69298713823e75e591570387\",\n            \"title\": \"Will the sun explode in 5 billion years\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6929879c823e75e59157038b\",\n            \"title\": \"Is ATLAS 3I an interstellar comet or an UFO\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69298805823e75e59157038f\",\n            \"title\": \"Did NASA really land on moon or is it\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6929b06d8c75ac139670d7fb\",\n            \"title\": \"The Great Tech Infrastructure of 2025!\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"697641935afda2dca12c2a42\",\n            \"title\": \"Does Aliens really exist ?\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        }\n    ]\n}"
+            },
+            {
+              "name": "Invalid Topic Term",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjMuZGV2MTIzIiwiaWF0IjoxNzY5MzUxMTA3fQ.FdeuiEMn1Vd8xM3rFc8JWa7OZxlCmdQl_NN4O2ufL18",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/user/blogs-topic?t=cats",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "user",
+                    "blogs-topic"
+                  ],
+                  "query": [
+                    {
+                      "key": "t",
+                      "value": "cats"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 05:45:04 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c566bda8e0c4e87-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"3a-XJ3vnjGo5dBRvaO3lM6GHUwrWp4\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "7cc553cf-73b7-40f7"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"No search results found (or) Invalid topic term!\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Add to Favourite Blogs",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://blog-api-cc47.onrender.com/user/add-favourite-blog/697a01541d612a03813bf1ce",
+              "protocol": "https",
+              "host": [
+                "blog-api-cc47",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "user",
+                "add-favourite-blog",
+                "697a01541d612a03813bf1ce"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/user/add-favourite-blog/697a01541d612a03813bf1ce",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "user",
+                    "add-favourite-blog",
+                    "697a01541d612a03813bf1ce"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 05:51:39 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "48"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c567579f94b79ee-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"2c-zFN9sL/a9dtQu6EksG1CzZGSx+4\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "2e83342e-8f59-4f95"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Added to Favourites Successfully!!\"\n}"
+            },
+            {
+              "name": "Invalid BlogID",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/user/add-favourite-blog/dasdadaads",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "user",
+                    "add-favourite-blog",
+                    "dasdadaads"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 05:48:35 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "47"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c567100edc3347a-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"2f-t66VnUhhPskb8nIp16RamAJEimU\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "d9e57943-9004-4e70"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Invalid BlogID (or) BlogID not found!\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "View Favourite Blogs",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"User 2\",\r\n    \"password\": \"password2\"\r\n}"
+            },
+            "url": {
+              "raw": "https://blog-api-cc47.onrender.com/user/my-favourite-blogs",
+              "protocol": "https",
+              "host": [
+                "blog-api-cc47",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "user",
+                "my-favourite-blogs"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"username\": \"User 2\",\r\n    \"password\": \"password2\"\r\n}"
+                },
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/user/my-favourite-blogs",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "user",
+                    "my-favourite-blogs"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 05:53:30 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "367"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c567830ac1ad126-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"33d-54UZ0SgIV8opilrlK+0mev/xn74\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "e676cd9a-7ae1-49ce"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"favouriteBlogs\": [\n        {\n            \"_id\": \"69298713823e75e591570387\",\n            \"title\": \"Will the sun explode in 5 billion years\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"697a01541d612a03813bf1ce\",\n            \"title\": \"How to get a good tech job in 2026?\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Pagination With Limit",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://blog-api-cc47.onrender.com/user/blogs?page=1&limit=5",
+              "protocol": "https",
+              "host": [
+                "blog-api-cc47",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "user",
+                "blogs"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/user/blogs?page=1&limit=5",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "user",
+                    "blogs"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "5"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 05:56:23 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "467"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c567c6b4c89d81d-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"865-KHyZHSYcNnVD/Cx9KV/WvXsDGTM\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "d238747c-5a48-43f8"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"totalBlogs\": 11,\n    \"msg\": \"Pagination Succcessful\",\n    \"currentPage\": 1,\n    \"limitForPage\": 5,\n    \"totalPages\": 3,\n    \"blogsData\": [\n        {\n            \"_id\": \"6929865e3de2a4f78e6eed45\",\n            \"title\": \"How to become a Python Full Stack Dev in (2025)\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6929866b3de2a4f78e6eed47\",\n            \"title\": \"How to become a Full Stack Dev in (2025)\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"692986bb823e75e591570385\",\n            \"title\": \"How to become a Java Full Stack Dev in (2025)\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69298713823e75e591570387\",\n            \"title\": \"Will the sun explode in 5 billion years\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69298761823e75e591570389\",\n            \"title\": \"How to make coding more interesting\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        }\n    ]\n}"
+            },
+            {
+              "name": "Successful Response for High Limit",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/user/blogs?page=1&limit=10",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "user",
+                    "blogs"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 05:58:43 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "667"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c567fd868a7d81d-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"104f-RN71VltYsEMdcTf81jkXUsd/RZM\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "18b10b0a-a63c-4004"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"totalBlogs\": 11,\n    \"msg\": \"Pagination Succcessful\",\n    \"currentPage\": 1,\n    \"limitForPage\": 10,\n    \"totalPages\": 2,\n    \"blogsData\": [\n        {\n            \"_id\": \"6929865e3de2a4f78e6eed45\",\n            \"title\": \"How to become a Python Full Stack Dev in (2025)\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6929866b3de2a4f78e6eed47\",\n            \"title\": \"How to become a Full Stack Dev in (2025)\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"692986bb823e75e591570385\",\n            \"title\": \"How to become a Java Full Stack Dev in (2025)\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69298713823e75e591570387\",\n            \"title\": \"Will the sun explode in 5 billion years\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69298761823e75e591570389\",\n            \"title\": \"How to make coding more interesting\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6929879c823e75e59157038b\",\n            \"title\": \"Is ATLAS 3I an interstellar comet or an UFO\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69298805823e75e59157038f\",\n            \"title\": \"Did NASA really land on moon or is it\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6929b06d8c75ac139670d7fb\",\n            \"title\": \"The Great Tech Infrastructure of 2025!\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69763c765afda2dca12c2a3e\",\n            \"title\": \"Tech that changed the dynamics of 2025!\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"697641935afda2dca12c2a42\",\n            \"title\": \"Does Aliens really exist ?\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        }\n    ]\n}"
+            },
+            {
+              "name": "Bad Response Non-Existing Page",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/user/blogs?page=5&limit=5",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "user",
+                    "blogs"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "5"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "5"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 05:57:09 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "40"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c567d85ebe3d81d-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"24-tjX2j97T2qitGPQVeJ4IdgbUPCU\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "d8cc72b2-9b35-4c34"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"error\": \"The page does not exist!\"\n}"
+            },
+            {
+              "name": "Successful Response for Existing Custom Page",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/user/blogs?page=2&limit=5",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "user",
+                    "blogs"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "2"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "5"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 06:01:51 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "531"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c56846cfd38d81d-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"857-G1HLFm8YHQwqpEGpZdil7FMVlOc\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "6e0d7e7c-ff20-4aea"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"totalBlogs\": 11,\n    \"msg\": \"Pagination Succcessful\",\n    \"currentPage\": 2,\n    \"limitForPage\": 5,\n    \"totalPages\": 3,\n    \"blogsData\": [\n        {\n            \"_id\": \"6929879c823e75e59157038b\",\n            \"title\": \"Is ATLAS 3I an interstellar comet or an UFO\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69298805823e75e59157038f\",\n            \"title\": \"Did NASA really land on moon or is it\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6929b06d8c75ac139670d7fb\",\n            \"title\": \"The Great Tech Infrastructure of 2025!\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69763c765afda2dca12c2a3e\",\n            \"title\": \"Tech that changed the dynamics of 2025!\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"697641935afda2dca12c2a42\",\n            \"title\": \"Does Aliens really exist ?\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\n            \"imageLink\": \"https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png\",\n            \"topic\": \"science\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Non-Existing Routes",
+      "item": [
+        {
+          "name": "Bad Routes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://blog-api-cc47.onrender.com/random-route",
+              "protocol": "https",
+              "host": [
+                "blog-api-cc47",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "random-route"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Non-Existing Bad Route",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://blog-api-cc47.onrender.com/random-route",
+                  "protocol": "https",
+                  "host": [
+                    "blog-api-cc47",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "random-route"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 06:04:22 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "43"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9c56881dac473106-HYD"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"29-/pGvU7ufm+QeeHl2OFs1rp+S4xU\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "21ef7ccf-8b09-49c9"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"error\": \"Bad route (or) No route found\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseURL",
+      "value": "",
+      "type": "default"
+    }
+  ]
 }
