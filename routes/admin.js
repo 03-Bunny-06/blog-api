@@ -1,4 +1,5 @@
 const {Router} = require("express");
+const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const router = Router();
 const {Admin, Blogs} = require('../db');
@@ -11,9 +12,7 @@ router.post('/signup', async (req, res) => {
     const username = req.headers.username;
     const password = req.headers.password;
 
-    const adminExists = await Admin.findOne({
-        username
-    })
+    const adminExists = await Admin.findOne(username);
 
     if(!adminExists){
         const adminCreation = await Admin.create({
@@ -21,12 +20,12 @@ router.post('/signup', async (req, res) => {
             password
         })
         res.status(200).json({
-            "msg": 'Admin created successfully!!!'
+            msg: "Admin created successfully!"
         })
     }
     else{
         res.status(400).json({
-            "msg": 'Admin already exists try SignIn instead!!!'
+            msg: "Admin already exists try (SignIn) instead!"
         })
     }
 })
@@ -42,15 +41,15 @@ router.post('/signin', async (req, res) => {
     })
     if(!adminExists){
         res.status(400).json({
-            "msg": 'Invalid username or password'
+            msg: "Invalid username or password"
         })
     }
     else{
         const authToken = jwt.sign({username}, JWT_KEY);
         console.log(authToken);
         res.status(200).json({
-            "msg": 'Signed in successfully!!!',
-            "token": authToken
+            msg: "Signed in successfully!",
+            token: authToken
         })
     }
 })
@@ -70,30 +69,37 @@ router.post('/create-blog', adminMiddleware, async (req, res) => {
     })
 
     res.status(200).json({
-        msg: 'Blog created successfully!!!'
+        msg: "Blog created successfully!"
     })
 })
 
 //Updating Blogs
 router.put('/edit-blog/:blogId', adminMiddleware, async (req, res) => {
-    const blogId = req.params.blogId;
-    const blogExists = await Blogs.findById(blogId);
-    console.log(blogExists);
+    try{
+        const blogId = req.params.blogId;
+        const isValidBlogId = mongoose.isValidObjectId(blogId)
 
-    if(!blogExists){
-        res.status(400).json({
-            "msg": "Blog not found!!"
-        })
+        if(!isValidBlogId){
+            res.status(400).json({
+                "msg": "Invalid BlogID (or) BlogID not found!"
+            })
+        }
+        else{
+            const blogData = req.body;
+
+            const updatedBlog = await Blogs.findByIdAndUpdate(
+                blogId, {$set: {title: blogData.title, description: blogData.description}}, {new: true}
+            )
+            console.log(updatedBlog);
+            res.status(200).json({
+                msg: "Updated the blog successfully!"
+            })
+        }
     }
-    else{
-        const blogData = req.body;
-
-        const updatedDoc = await Blogs.updateOne(
-            {_id: blogId}, {$set: {title: blogData.title, description: blogData.description}}
-        )
-        console.log(updatedDoc);
-        res.status(200).json({
-            "msg": "Updated the blog successfully!"
+    catch(e){
+        res.status(500).json({
+            msg: "Error occured",
+            error: e.message
         })
     }
 })
@@ -101,20 +107,26 @@ router.put('/edit-blog/:blogId', adminMiddleware, async (req, res) => {
 //Deleting Blogs
 router.delete('/delete-blog/:blogId', adminMiddleware, async (req, res) => {
     const blogId = req.params.blogId;
+    const isValidBlogId = mongoose.isValidObjectId(blogId);
+    try{    
+        if(!isValidBlogId){
+            res.status(400).json({
+                msg: "Invalid BlogID (or) BlogID not found!"
+            })
+        }
 
-    const blogExists = await Blogs.findById(blogId);
-    if(!blogExists){
-        res.status(400).json({
-            "msg": "Blog not found"
-        })
+        else{
+            const deletedBlog = await Blogs.findByIdAndDelete(blogId);
+            console.log(deletedBlog);
+            res.status(200).json({
+                msg: "Removed the blog successfully!"
+            })
+        }
     }
-    else{
-        const deletedBlog = await Blogs.deleteOne(
-            {_id: blogId}
-        )
-        console.log(deletedBlog);
-        res.status(200).json({
-            'msg': 'Removed the blog successfully!!!'
+    catch(e){
+        res.status(500).json({
+            msg: "Error Occured",
+            error: e.message
         })
     }
 })

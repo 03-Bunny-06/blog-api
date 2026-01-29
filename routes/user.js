@@ -1,5 +1,6 @@
 const {Router} = require("express");
 const jwt = require("jsonwebtoken");
+const mongoose = require("mongoose");
 const router = Router();
 const { User, Blogs } = require("../db/index.js");
 const {JWT_KEY} = require('../config.js');
@@ -10,10 +11,7 @@ router.post('/signup', async (req, res) => {
     const username = req.headers.username;
     const password = req.headers.password;
 
-    const userExists = await User.findOne({
-        username,
-        password
-    })
+    const userExists = await User.findOne(username);
 
     if(!userExists){
         const userCreation = await User.create({
@@ -21,12 +19,12 @@ router.post('/signup', async (req, res) => {
             password: password
         })
         res.status(200).json({
-            "msg": "User created successfully!!"
+            msg: "User created successfully!"
         })
     }
     else{
         res.status(400).json({
-            "msg": "User already exists try SignIn instead!!!"
+            msg: "User already exists try (SignIn) instead!"
         })
     }
 })
@@ -42,15 +40,15 @@ router.post('/signin', async (req, res) => {
     })
     if(!adminExists){
         res.status(400).json({
-            "msg": 'Invalid username or password'
+            msg: 'Invalid username or password!'
         })
     }
     else{
         const authToken = jwt.sign({username}, JWT_KEY);
         console.log(authToken);
         res.status(200).json({
-            "msg": 'Signed in successfully!!!',
-            "token": authToken
+            msg: 'Signed in successfully!!!',
+            token: authToken
         })
     }
 })
@@ -91,7 +89,7 @@ router.get('/blogs', async (req, res) => {
         if (hasPagination){
             if (page > totalPages && totalBlogs > 0){
                 return res.status(400).json({
-                    'error': 'The page does not exist!'
+                    error: "The page does not exist!"
                 })
             }
 
@@ -103,18 +101,18 @@ router.get('/blogs', async (req, res) => {
         const blogsData = await query;
 
         res.status(200).json({
-            'totalBlogs': totalBlogs,
+            totalBlogs: totalBlogs,
             ...(page && limit && {
-                'msg': 'Pagination Succcessful',
-                'currentPage': page,
-                'totalPages': totalPages
+                msg: 'Pagination Succcessful',
+                currentPage: page,
+                totalPages: totalPages
             })
-            ,'blogsData': blogsData
+            ,blogsData: blogsData
         })
     }
     catch (e){
         res.status(500).json({
-            'error': e.message
+            error: e.message
         })
     }
 })
@@ -122,18 +120,23 @@ router.get('/blogs', async (req, res) => {
 //View Specific Blog
 router.get('/blogs/:blogId', userMiddleware, async (req, res) => {
     const blogId = req.params.blogId;
+    const isValidBlogId = mongoose.isValidObjectId(blogId);
+
+    if(!isValidBlogId){
+
+    }
 
     const blogData = await Blogs.findById(blogId);
 
     if(!blogData){
         res.status(400).json({
-            "msg": "Blog does not exist!!!"
+            msg: "Blog does not exist!!!"
         })
     }
     else{
         res.status(200).json({
-            "msg": "Blog found!!",
-            "blog": blogData
+            msg: "Blog found!!",
+            blog: blogData
         })
     }
 })
@@ -153,14 +156,14 @@ router.get('/blogs-topic', userMiddleware, async (req, res) => {
         }
         else{
             res.status(200).json({
-                "topicSearch": topicBasedSearchData
+                searchedTopicData: topicBasedSearchData
             })
         }
     }
     catch(e){
         res.status(400).json({
-            "msg": 'Invalid search topic term',
-            "error": e.message
+            msg: 'Invalid search topic term',
+            error: e.message
         })
     }
 })
@@ -169,6 +172,8 @@ router.get('/blogs-topic', userMiddleware, async (req, res) => {
 router.post('/add-favourite-blog/:blogId', userMiddleware, async (req, res) => {
     try{
         const blogId = req.params.blogId;
+
+
         const username = req.username;
         console.log(username);
 
@@ -176,7 +181,7 @@ router.post('/add-favourite-blog/:blogId', userMiddleware, async (req, res) => {
 
         if(!blogExists){
             return res.status(400).json({
-                'msg': 'Blog does not exists!!'
+                msg: 'Blog does not exists!'
             })
         }
         else{
@@ -187,7 +192,7 @@ router.post('/add-favourite-blog/:blogId', userMiddleware, async (req, res) => {
                 }
             )
             res.status(200).json({
-                "msg": "Added to Favourites Successfully!!"
+                msg: "Added to Favourites Successfully!!"
             })
         }
     }
@@ -222,7 +227,7 @@ router.get('/my-favourite-blogs', userMiddleware, async (req, res) => {
             }
         })
         res.status(200).json({
-            "favouriteBlogs": favouriteBlog
+            favouriteBlogs: favouriteBlog
         })
     }
 })

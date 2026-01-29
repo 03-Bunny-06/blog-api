@@ -11,6 +11,12 @@ app.use(bodyParser.json());
 app.use('/admin', adminRouter);
 app.use('/user', userRouter);
 
+app.use((req, res) => {
+  res.status(404).json({
+    error: "Bad route (or) No route found"
+  });
+});
+
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log("Server is running on port 3005: ")

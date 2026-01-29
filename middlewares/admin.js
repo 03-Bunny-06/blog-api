@@ -6,7 +6,7 @@ const adminMiddleware = (req, res, next) => {
 
     if(token === undefined || token.length === 0){
         res.status(401).json({
-            msg: 'Authorization header missing!'
+            msg: "Authorization header missing!"
         })
     }
     
@@ -26,13 +26,13 @@ const adminMiddleware = (req, res, next) => {
 
         else{
             res.status(400).json({
-                msg: 'Username not found in the token'
+                msg: "Username not found in the token"
             })
         }
     }
     catch(e){
         res.status(400).json({
-            msg: 'Invalid Inputs',
+            msg: "Invalid Inputs",
             error: e.message
         })
     }
