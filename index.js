@@ -2,10 +2,16 @@ const env = require('dotenv');
 env.config();
 
 const express = require("express");
+const swaggerUi = require("swagger-ui-express");
+const path = require("path");
 const bodyParser = require("body-parser");
 const app = express();
 const adminRouter = require("./routes/admin");
 const userRouter = require("./routes/user");
+
+const openApiSpec = require("./openapi.json");
+
+app.use("/api-docs/", swaggerUi.serve, swaggerUi.setup(openApiSpec));
 
 app.use(bodyParser.json());
 app.use('/admin', adminRouter);
