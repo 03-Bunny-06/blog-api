@@ -11,7 +11,7 @@ router.post('/signup', async (req, res) => {
     const username = req.headers.username;
     const password = req.headers.password;
 
-    const userExists = await User.findOne(username);
+    const userExists = await User.findOne({username: username});
 
     if(!userExists){
         const userCreation = await User.create({
@@ -88,7 +88,7 @@ router.get('/blogs', async (req, res) => {
 
         if (hasPagination){
             if (page > totalPages && totalBlogs > 0){
-                return res.status(400).json({
+                res.status(400).json({
                     error: "The page does not exist!"
                 })
             }
@@ -103,14 +103,15 @@ router.get('/blogs', async (req, res) => {
         res.status(200).json({
             totalBlogs: totalBlogs,
             ...(page && limit && {
-                msg: 'Pagination Succcessful',
+                msg: "Pagination Succcessful",
                 currentPage: page,
+                limitForPage: limit,
                 totalPages: totalPages
             })
             ,blogsData: blogsData
         })
     }
-    catch (e){
+    catch(e){
         res.status(500).json({
             error: e.message
         })
@@ -123,19 +124,16 @@ router.get('/blogs/:blogId', userMiddleware, async (req, res) => {
     const isValidBlogId = mongoose.isValidObjectId(blogId);
 
     if(!isValidBlogId){
-
-    }
-
-    const blogData = await Blogs.findById(blogId);
-
-    if(!blogData){
         res.status(400).json({
-            msg: "Blog does not exist!!!"
+            msg: "Invalid BlogID (or) BlogID not found!"
         })
     }
+
     else{
+        const blogData = await Blogs.findById(blogId);
+
         res.status(200).json({
-            msg: "Blog found!!",
+            msg: "The specific blog found!",
             blog: blogData
         })
     }
@@ -151,7 +149,7 @@ router.get('/blogs-topic', userMiddleware, async (req, res) => {
         })
         if(topicBasedSearchData.length === 0){
             res.status(404).json({
-                msg: 'No search results found'
+                msg: 'No search results found!'
             })
         }
         else{
@@ -162,7 +160,7 @@ router.get('/blogs-topic', userMiddleware, async (req, res) => {
     }
     catch(e){
         res.status(400).json({
-            msg: 'Invalid search topic term',
+            msg: 'Invalid search topic term!',
             error: e.message
         })
     }
@@ -171,22 +169,21 @@ router.get('/blogs-topic', userMiddleware, async (req, res) => {
 //Add to Favourites (Adding users Favourite Blogs)
 router.post('/add-favourite-blog/:blogId', userMiddleware, async (req, res) => {
     try{
-        const blogId = req.params.blogId;
+        const blogId = req.params.blogId; 
+        const isValidBlogId = mongoose.isValidObjectId(blogId);
 
-
-        const username = req.username;
-        console.log(username);
-
-        const blogExists = await Blogs.findById(blogId);
-
-        if(!blogExists){
-            return res.status(400).json({
-                msg: 'Blog does not exists!'
+        if(!isValidBlogId){
+            res.status(400).json({
+                msg: "Invalid BlogID (or) BlogID not found!"
             })
         }
+
         else{
-            const addingToFavourites = await User.updateOne(
-                {username},
+            const username = req.username;
+            console.log(username);
+            
+            const addingToFavourites = await User.findOneAndUpdate(
+                {username: username},
                 {
                     $push: {favouriteBlogs: blogId}
                 }
@@ -211,13 +208,13 @@ router.get('/my-favourite-blogs', userMiddleware, async (req, res) => {
 
     //Checks if the user exists in the User Collection/Table.
     const userExists = await User.findOne({
-        username
+        username: username
     })
 
     //If user doesnot exists in the collection this gets executed or else the control reaches the else block.
     if(!userExists){
         res.status(400).json({
-            "msg": "User does not exist!!"
+            "msg": "User does not exist!"
         })
     }
     else{
@@ -231,7 +228,5 @@ router.get('/my-favourite-blogs', userMiddleware, async (req, res) => {
         })
     }
 })
-
-
 
 module.exports = router;

@@ -12,7 +12,7 @@ router.post('/signup', async (req, res) => {
     const username = req.headers.username;
     const password = req.headers.password;
 
-    const adminExists = await Admin.findOne(username);
+    const adminExists = await Admin.findOne({username: username});
 
     if(!adminExists){
         const adminCreation = await Admin.create({
@@ -81,7 +81,7 @@ router.put('/edit-blog/:blogId', adminMiddleware, async (req, res) => {
 
         if(!isValidBlogId){
             res.status(400).json({
-                "msg": "Invalid BlogID (or) BlogID not found!"
+                msg: "Invalid BlogID (or) BlogID not found!"
             })
         }
         else{
