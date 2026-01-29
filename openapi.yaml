@@ -1,0 +1,2316 @@
+openapi: 3.0.0
+info:
+  title: Blog API Documentation
+  version: 1.0.0
+  description: | 
+    Blog API is a RESTful backend service for modern blogging platforms.
+
+    🚀 **Features**: 
+      - User authentication and authorization. 
+      - Blog post creation, editing, and deletion. 
+      - Secure and scalable REST endpoints. 
+      - Clean and scalable API architecture. 
+    
+    🛠 **Tech Stack**: 
+      - Node.js, Express.js & Mongo DB. 
+      - REST API principles. 
+      - JWT-based authentication. 
+      - Modular and maintainable codebase.
+  contact: 
+    name: Sai Kowshik 
+    email: saikowshik0306@gmail.com 
+    url: https://github.com/03-Bunny-06/blog-api
+servers:
+  - url: https://blog-api-cc47.onrender.com
+tags:
+  - name: Admin
+  - name: Users
+  - name: Non-Existing Routes
+security: 
+  - AdminAuth: []
+  - UserAuth: []
+paths:
+  /admin/signup:
+    post:
+      tags:
+        - Admin
+      summary: SignUp
+      requestBody:
+        content: {}
+      parameters:
+        - name: username
+          in: header
+          schema:
+            type: string
+          example: admin4
+        - name: password
+          in: header
+          schema:
+            type: string
+          example: ADMIN1234
+      responses:
+        '200':
+          description: OK
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Wed, 28 Jan 2026 12:12:48 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '43'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c50666fcb9608b7-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"27-P7SFo1TfO/VwdkLj6FThNnQp1B8"
+            rndr-id:
+              schema:
+                type: string
+                example: 77d16194-ca9d-4724
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Admin created successfully!!!"
+                }
+        '400':
+          description: Bad Request
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Wed, 28 Jan 2026 12:12:16 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '56'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c5065224ae608b7-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"34-Wgm6iSsgQoYY1WREhZZDmka9XW4"
+            rndr-id:
+              schema:
+                type: string
+                example: dc50bb89-517a-4fe8
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Admin already exists try SignIn instead!!!"
+                }
+  /admin/signin:
+    post:
+      tags:
+        - Admin
+      summary: SignIn
+      requestBody:
+        content: {}
+      parameters:
+        - name: username
+          in: header
+          schema:
+            type: string
+          example: admin2
+        - name: password
+          in: header
+          schema:
+            type: string
+          example: ADMIN123
+      responses:
+        '200':
+          description: OK
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Wed, 28 Jan 2026 12:14:16 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '158'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c506894cb33dc75-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"b2-2R7AkK9TA9Ok9mjMTzxw8MKZBnM"
+            rndr-id:
+              schema:
+                type: string
+                example: c6ff6902-613e-4142
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Signed in successfully!!!",
+                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTYwMjQ1Nn0.qi3TR4GOaLTXiS7ncvIyCYrQWzIOhEuBxfRszADXPXs"
+                }
+        '400':
+          description: Bad Request
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Wed, 28 Jan 2026 12:14:34 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '42'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c5069045c0bdc75-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"26-6fBeHvHa0EobeJEi7uzrM/GJksw"
+            rndr-id:
+              schema:
+                type: string
+                example: 29666d24-3e80-4127
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Invalid username or password"
+                }
+  /admin/create-blog:
+    post:
+      tags:
+        - Admin
+      summary: Create Blog
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                title: How to get a good tech job in 2026?
+                description: >-
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s.
+                imageLink: >-
+                  https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png
+                topic: tech
+      responses:
+        '200':
+          description: OK
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Wed, 28 Jan 2026 12:30:12 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '42'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c507f69abfa79f5-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"26-oqlJe6xFReu6w7/ryMBtIyJ2qYs"
+            rndr-id:
+              schema:
+                type: string
+                example: 16b2d4f6-fb2d-4691
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Blog created successfully!!!"
+                }
+        '400':
+          description: Bad Request
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Wed, 28 Jan 2026 12:55:25 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '51'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c50a4e178ad5924-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"34-S0PzxGUcUMhh9HTXYRfWzDRiaK8"
+            rndr-id:
+              schema:
+                type: string
+                example: d8b093e6-9c95-4d3f
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Invalid Inputs",
+                    "error": "invalid signature"
+                }
+        '401':
+          description: Unauthorized
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Wed, 28 Jan 2026 13:17:51 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '43'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c50c54e9a4c41e5-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"27-wtLXfwROJG7VIsbROvQorPY6YlI"
+            rndr-id:
+              schema:
+                type: string
+                example: a20ea580-3e91-4100
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Authorization header missing!"
+                }
+  /admin/edit-blog/6929b06d8c75ac139670d7fb:
+    put:
+      tags:
+        - Admin
+      summary: Edit Blog
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                title: The Great Tech Infrastructure of 2025!
+                description: >-
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s.
+      responses:
+        '200':
+          description: OK
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Wed, 28 Jan 2026 13:21:44 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '44'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c50cb63eb0479ee-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"28-CmnLElLjo2gFt4MzydKYM/5WLr8"
+            rndr-id:
+              schema:
+                type: string
+                example: 4a52da3b-b8a9-4318
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Updated the blog successfully!"
+                }
+        '400':
+          description: Bad Request
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Thu, 29 Jan 2026 04:17:58 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '47'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c55ec423adc8cb2-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"2f-t66VnUhhPskb8nIp16RamAJEimU"
+            rndr-id:
+              schema:
+                type: string
+                example: dd93e9dc-60bb-4a60
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              examples:
+                example-0:
+                  summary: Invalid Blog ID
+                  value: |-
+                    {
+                        "msg": "Invalid BlogID (or) BlogID not found!"
+                    }
+                example-1:
+                  summary: Invalid Auth Token
+                  value: |-
+                    {
+                        "msg": "Invalid Inputs",
+                        "error": "invalid signature"
+                    }
+        '401':
+          description: Unauthorized
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Thu, 29 Jan 2026 04:19:28 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '43'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c55ee739eb7dc75-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"27-wtLXfwROJG7VIsbROvQorPY6YlI"
+            rndr-id:
+              schema:
+                type: string
+                example: 57582fdf-5bd8-4533
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Authorization header missing!"
+                }
+  /admin/delete-blog/692987ba823e75e59157038d:
+    delete:
+      tags:
+        - Admin
+      summary: Delete Blog
+      responses:
+        '200':
+          description: OK
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Thu, 29 Jan 2026 04:23:37 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '44'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c55f4839b3221ba-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"28-f3uB+ijBwRfIxs95FPQRS8ETxgo"
+            rndr-id:
+              schema:
+                type: string
+                example: 701888ee-10f2-4751
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Removed the blog successfully!"
+                }
+        '400':
+          description: Bad Request
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Thu, 29 Jan 2026 04:24:22 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '47'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c55f5a2bb1b21ba-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"2f-t66VnUhhPskb8nIp16RamAJEimU"
+            rndr-id:
+              schema:
+                type: string
+                example: 85545ddc-896a-4806
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Invalid BlogID (or) BlogID not found!"
+                }
+  /user/signup:
+    post:
+      tags:
+        - Users
+      summary: SignUp
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ''
+      parameters:
+        - name: username
+          in: header
+          schema:
+            type: string
+          example: number4.dev
+        - name: password
+          in: header
+          schema:
+            type: string
+          example: n4.dev123
+      responses:
+        '200':
+          description: OK
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Thu, 29 Jan 2026 05:34:12 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '40'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c565bed2c2979ef-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"24-GS9ZkRlQWaaM0laoy5lry1MO7TU"
+            rndr-id:
+              schema:
+                type: string
+                example: 20ee6f0a-f60a-47f0
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "User created successfully!"
+                }
+        '400':
+          description: Bad Request
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Thu, 29 Jan 2026 05:33:19 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '55'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c565a1b7ba4d81d-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"33-f1WyNTRqh79sjnCXJ/SfXPag7GY"
+            rndr-id:
+              schema:
+                type: string
+                example: 6eb06906-352b-4a71
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "User already exists try (SignIn) instead!"
+                }
+  /user/signin:
+    post:
+      tags:
+        - Users
+      summary: SignIn
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                username: User 2
+                password: password2
+      parameters:
+        - name: username
+          in: header
+          schema:
+            type: string
+          example: number1.dev
+        - name: password
+          in: header
+          schema:
+            type: string
+          example: n1.dev123
+      responses:
+        '200':
+          description: OK
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Thu, 29 Jan 2026 05:35:13 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '165'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c565d697c487b7a-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"b9-qkjlyi+GZ14NAOkjMiurzs77mCE"
+            rndr-id:
+              schema:
+                type: string
+                example: 0b1de6b0-f4ef-4e53
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Signed in successfully!!!",
+                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU"
+                }
+        '400':
+          description: Bad Request
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Thu, 29 Jan 2026 05:35:53 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '43'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c565e6518817b7a-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"27-yobfxnp0hg5Gf/iV24945IQkR2U"
+            rndr-id:
+              schema:
+                type: string
+                example: ee3c305d-dfab-4432
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Invalid username or password!"
+                }
+  /user/blogs:
+    get:
+      tags:
+        - Users
+      summary: Pagination With Limit
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '5'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Thu, 29 Jan 2026 05:56:23 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '467'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c567c6b4c89d81d-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"865-KHyZHSYcNnVD/Cx9KV/WvXsDGTM"
+            rndr-id:
+              schema:
+                type: string
+                example: d238747c-5a48-43f8
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              examples:
+                example-0:
+                  summary: Successful Response
+                  value: |-
+                    {
+                        "totalBlogs": 11,
+                        "msg": "Pagination Succcessful",
+                        "currentPage": 1,
+                        "limitForPage": 5,
+                        "totalPages": 3,
+                        "blogsData": [
+                            {
+                                "_id": "6929865e3de2a4f78e6eed45",
+                                "title": "How to become a Python Full Stack Dev in (2025)",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "tech",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6929866b3de2a4f78e6eed47",
+                                "title": "How to become a Full Stack Dev in (2025)",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "tech",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "692986bb823e75e591570385",
+                                "title": "How to become a Java Full Stack Dev in (2025)",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "tech",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "69298713823e75e591570387",
+                                "title": "Will the sun explode in 5 billion years",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "science",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "69298761823e75e591570389",
+                                "title": "How to make coding more interesting",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "tech",
+                                "__v": 0
+                            }
+                        ]
+                    }
+                example-1:
+                  summary: Successful Response for High Limit
+                  value: |-
+                    {
+                        "totalBlogs": 11,
+                        "msg": "Pagination Succcessful",
+                        "currentPage": 1,
+                        "limitForPage": 10,
+                        "totalPages": 2,
+                        "blogsData": [
+                            {
+                                "_id": "6929865e3de2a4f78e6eed45",
+                                "title": "How to become a Python Full Stack Dev in (2025)",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "tech",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6929866b3de2a4f78e6eed47",
+                                "title": "How to become a Full Stack Dev in (2025)",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "tech",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "692986bb823e75e591570385",
+                                "title": "How to become a Java Full Stack Dev in (2025)",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "tech",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "69298713823e75e591570387",
+                                "title": "Will the sun explode in 5 billion years",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "science",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "69298761823e75e591570389",
+                                "title": "How to make coding more interesting",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "tech",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6929879c823e75e59157038b",
+                                "title": "Is ATLAS 3I an interstellar comet or an UFO",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "science",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "69298805823e75e59157038f",
+                                "title": "Did NASA really land on moon or is it",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "science",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6929b06d8c75ac139670d7fb",
+                                "title": "The Great Tech Infrastructure of 2025!",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "science",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "69763c765afda2dca12c2a3e",
+                                "title": "Tech that changed the dynamics of 2025!",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "tech",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "697641935afda2dca12c2a42",
+                                "title": "Does Aliens really exist ?",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "science",
+                                "__v": 0
+                            }
+                        ]
+                    }
+                example-2:
+                  summary: Successful Response for Existing Custom Page
+                  value: |-
+                    {
+                        "totalBlogs": 11,
+                        "msg": "Pagination Succcessful",
+                        "currentPage": 2,
+                        "limitForPage": 5,
+                        "totalPages": 3,
+                        "blogsData": [
+                            {
+                                "_id": "6929879c823e75e59157038b",
+                                "title": "Is ATLAS 3I an interstellar comet or an UFO",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "science",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "69298805823e75e59157038f",
+                                "title": "Did NASA really land on moon or is it",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "science",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6929b06d8c75ac139670d7fb",
+                                "title": "The Great Tech Infrastructure of 2025!",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "science",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "69763c765afda2dca12c2a3e",
+                                "title": "Tech that changed the dynamics of 2025!",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "tech",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "697641935afda2dca12c2a42",
+                                "title": "Does Aliens really exist ?",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "science",
+                                "__v": 0
+                            }
+                        ]
+                    }
+        '400':
+          description: Bad Request
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Thu, 29 Jan 2026 05:57:09 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '40'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c567d85ebe3d81d-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"24-tjX2j97T2qitGPQVeJ4IdgbUPCU"
+            rndr-id:
+              schema:
+                type: string
+                example: d8cc72b2-9b35-4c34
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "error": "The page does not exist!"
+                }
+  /user/blogs/697a01541d612a03813bf1ce:
+    get:
+      tags:
+        - Users
+      summary: View Specific Blog
+      responses:
+        '200':
+          description: OK
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Thu, 29 Jan 2026 05:39:31 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '318'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c5663b7ebee41e5-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"1ba-PD5OhRPa/UaDuFlxWrs/kFMlAoo"
+            rndr-id:
+              schema:
+                type: string
+                example: 0cc80901-2a21-4a21
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "The specific blog found!",
+                    "blog": {
+                        "_id": "697a01541d612a03813bf1ce",
+                        "title": "How to get a good tech job in 2026?",
+                        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                        "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                        "topic": "tech",
+                        "__v": 0
+                    }
+                }
+        '400':
+          description: Bad Request
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Thu, 29 Jan 2026 05:39:09 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '47'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c566330cb7341e5-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"2f-t66VnUhhPskb8nIp16RamAJEimU"
+            rndr-id:
+              schema:
+                type: string
+                example: 2032b5db-8d28-4406
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Invalid BlogID (or) BlogID not found!"
+                }
+  /user/blogs-topic:
+    get:
+      tags:
+        - Users
+      summary: Blog Topic Based Filtering
+      parameters:
+        - name: t
+          in: query
+          schema:
+            type: string
+          example: science
+      responses:
+        '200':
+          description: OK
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Thu, 29 Jan 2026 05:46:45 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '461'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c566e50680321ba-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"99c-7OhxMAuHGadlRiQE7ciNGX2INRA"
+            rndr-id:
+              schema:
+                type: string
+                example: e21d4a44-2bde-4ae0
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              examples:
+                example-0:
+                  summary: Successful Response For Tech Topic Term
+                  value: |-
+                    {
+                        "searchedTopicData": [
+                            {
+                                "_id": "6929865e3de2a4f78e6eed45",
+                                "title": "How to become a Python Full Stack Dev in (2025)",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "tech",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6929866b3de2a4f78e6eed47",
+                                "title": "How to become a Full Stack Dev in (2025)",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "tech",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "692986bb823e75e591570385",
+                                "title": "How to become a Java Full Stack Dev in (2025)",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "tech",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "69298761823e75e591570389",
+                                "title": "How to make coding more interesting",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "tech",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "69763c765afda2dca12c2a3e",
+                                "title": "Tech that changed the dynamics of 2025!",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "tech",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "697a01541d612a03813bf1ce",
+                                "title": "How to get a good tech job in 2026?",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "tech",
+                                "__v": 0
+                            }
+                        ]
+                    }
+                example-1:
+                  summary: Successful Response For Science Topic Term
+                  value: |-
+                    {
+                        "searchedTopicData": [
+                            {
+                                "_id": "69298713823e75e591570387",
+                                "title": "Will the sun explode in 5 billion years",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "science",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6929879c823e75e59157038b",
+                                "title": "Is ATLAS 3I an interstellar comet or an UFO",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "science",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "69298805823e75e59157038f",
+                                "title": "Did NASA really land on moon or is it",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "science",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6929b06d8c75ac139670d7fb",
+                                "title": "The Great Tech Infrastructure of 2025!",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "science",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "697641935afda2dca12c2a42",
+                                "title": "Does Aliens really exist ?",
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "topic": "science",
+                                "__v": 0
+                            }
+                        ]
+                    }
+        '404':
+          description: Not Found
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Thu, 29 Jan 2026 05:45:04 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '60'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c566bda8e0c4e87-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"3a-XJ3vnjGo5dBRvaO3lM6GHUwrWp4"
+            rndr-id:
+              schema:
+                type: string
+                example: 7cc553cf-73b7-40f7
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "No search results found (or) Invalid topic term!"
+                }
+  /user/add-favourite-blog/697a01541d612a03813bf1ce:
+    post:
+      tags:
+        - Users
+      summary: Add to Favourite Blogs
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ''
+      responses:
+        '200':
+          description: OK
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Thu, 29 Jan 2026 05:51:39 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '48'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c567579f94b79ee-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"2c-zFN9sL/a9dtQu6EksG1CzZGSx+4"
+            rndr-id:
+              schema:
+                type: string
+                example: 2e83342e-8f59-4f95
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Added to Favourites Successfully!!"
+                }
+        '400':
+          description: Bad Request
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Thu, 29 Jan 2026 05:48:35 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '47'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c567100edc3347a-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"2f-t66VnUhhPskb8nIp16RamAJEimU"
+            rndr-id:
+              schema:
+                type: string
+                example: d9e57943-9004-4e70
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Invalid BlogID (or) BlogID not found!"
+                }
+  /user/my-favourite-blogs:
+    get:
+      tags:
+        - Users
+      summary: View Favourite Blogs
+      responses:
+        '200':
+          description: OK
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Thu, 29 Jan 2026 05:53:30 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '367'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c567830ac1ad126-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"33d-54UZ0SgIV8opilrlK+0mev/xn74"
+            rndr-id:
+              schema:
+                type: string
+                example: e676cd9a-7ae1-49ce
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "favouriteBlogs": [
+                        {
+                            "_id": "69298713823e75e591570387",
+                            "title": "Will the sun explode in 5 billion years",
+                            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                            "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                            "topic": "science",
+                            "__v": 0
+                        },
+                        {
+                            "_id": "697a01541d612a03813bf1ce",
+                            "title": "How to get a good tech job in 2026?",
+                            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                            "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                            "topic": "tech",
+                            "__v": 0
+                        }
+                    ]
+                }
+  /random-route:
+    get:
+      tags:
+        - Non-Existing Routes
+      summary: Bad Routes
+      responses:
+        '404':
+          description: Not Found
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Thu, 29 Jan 2026 06:04:22 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '43'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c56881dac473106-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"29-/pGvU7ufm+QeeHl2OFs1rp+S4xU"
+            rndr-id:
+              schema:
+                type: string
+                example: 21ef7ccf-8b09-49c9
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "error": "Bad route (or) No route found"
+                }
+components:
+  securitySchemes:
+    AdminAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: |
+        🔐 **Admin Authorization**
+
+        - Use an **Admin JWT token.**
+        - Paste the token in the **Authorize** button.
+        - Format must be exactly: 
+        `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss`
+    UserAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: |
+        🔐 **User Authorization**
+
+        - Use an **User JWT token.**
+        - Paste the token in the **Authorize** button.
+        - Format must be exactly: 
+        `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU`

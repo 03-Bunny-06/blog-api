@@ -10,8 +10,19 @@ const adminRouter = require("./routes/admin");
 const userRouter = require("./routes/user");
 
 const openApiSpec = require("./openapi.json");
+const { url } = require('inspector');
 
-app.use("/api-docs/", swaggerUi.serve, swaggerUi.setup(openApiSpec));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(null, 
+  {
+    swaggerOptions: {
+      url: "/openapi.yaml"
+    } 
+  })
+);
+
+app.get("/openapi.yaml", (req, res) => {
+  res.sendFile(path.join(__dirname, "openapi.yaml"))
+})
 
 app.use(bodyParser.json());
 app.use('/admin', adminRouter);

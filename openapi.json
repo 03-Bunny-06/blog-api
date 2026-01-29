@@ -58,17 +58,11 @@
         ],
         "responses": {
           "200": {
-            "description": {
-                            "statusText": "OK",
-                            "msg": "Admin created successfully!!!"
-                           }
-                },
+            "description": "OK - Admin created successfully!!!"
+          },
           "400": {
-            "description": {
-                            "statusText": "BAD REQUEST",
-                            "msg": "Admin already exists try SignIn instead!!!"
-                           }
-                }
+            "description": "Bad Request - Admin already exists try SignIn instead!!!" 
+          }
         }
       }
     },
@@ -349,17 +343,10 @@
         },
         "responses": {
           "200": {
-            "description": {
-              "statusText": "OK",
-              "msg": "Signed in successfully!!!",
-              "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU"
-            }
+            "description": "OK - Signed in successfully!!!"
           },
           "400": {
-            "description": {
-                "statusText": "Bad Requset",
-                "msg": "Invalid username or password!"
-            }
+            "description": "Bad Requset - Invalid username or password!"
           }
         }
       }
@@ -394,61 +381,10 @@
         ],
         "responses": {
           "200": {  
-            "description": {
-              "statusText": "OK",
-              "totalBlogs": 11,
-              "msg": "Pagination Succcessful",
-              "currentPage": 1,
-              "limitForPage": 5,
-              "totalPages": 3,
-              "blogsData": [
-                  {
-                      "_id": "6929865e3de2a4f78e6eed45",
-                      "title": "How to become a Python Full Stack Dev in (2025)",
-                      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                      "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                      "topic": "tech",
-                      "__v": 0
-                  },
-                  {
-                      "_id": "6929866b3de2a4f78e6eed47",
-                      "title": "How to become a Full Stack Dev in (2025)",
-                      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                      "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                      "topic": "tech",
-                      "__v": 0
-                  },
-                  {
-                      "_id": "692986bb823e75e591570385",
-                      "title": "How to become a Java Full Stack Dev in (2025)",
-                      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                      "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                      "topic": "tech",
-                      "__v": 0
-                  },
-                  {
-                      "_id": "69298713823e75e591570387",
-                      "title": "Will the sun explode in 5 billion years",
-                      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                      "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                      "topic": "science",
-                      "__v": 0
-                  },
-                  {
-                      "_id": "69298761823e75e591570389",
-                      "title": "How to make coding more interesting",
-                      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                      "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                      "topic": "tech",
-                      "__v": 0
-                  }
-              ]
-            }
+            "description": "OK - Blogs from Page 1 with Limit 5 "
           },
           "404" : {
-            "description": {
-              "error": "The page does not exist!"
-            }
+            "description": "Not Found - The page does not exist!"
           }
         }
       }
@@ -463,24 +399,10 @@
         "operationId": "viewSpecificBlog",
         "responses": {
           "200": {
-            "description": {
-              "statusText": "OK",
-            "msg": "The specific blog found!",
-            "blog": {
-                "_id": "697a01541d612a03813bf1ce",
-                "title": "How to get a good tech job in 2026?",
-                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                "topic": "tech",
-                "__v": 0
-              }
-            }
+            "description": "OK - The specific blog found!" 
           },
           "404": {
-            "description": {
-              "statusText":"Not Found",
-              "msg": "Invalid BlogID (or) BlogID not found!"
-            }
+            "description": "Not Found - Invalid BlogID (or) BlogID not found!"
           }
         }
       }
