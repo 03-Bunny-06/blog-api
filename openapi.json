@@ -2,12 +2,8 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Blog API Documentation",
-    "description": "Blog API is a RESTful backend service for modern blogging platforms.\n\n🚀 **Features**:\n- User authentication and authorization.\n- Blog post creation, editing, and deletion.\n- Secure and scalable REST endpoints.\n- Clean and scalable API architecture.\n\n🛠 **Tech Stack**:\n- Node.js, Express.js & Mongo DB.\n- REST API principles.\n- JWT-based authentication.\n- Modular and maintainable codebase."
-    "contact": {
-      "name": "Sai Kowshik", 
-      "email": "saikowshik0306@gmail.com" 
-      "url": "https://github.com/03-Bunny-06/blog-api"
-    },
+    "description": "Blog API is a RESTful backend service for modern blogging platforms."
+    "contact": {},
     "version": "1.0.0"
   },
   "servers": [
