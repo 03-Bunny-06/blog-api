@@ -149,7 +149,7 @@ router.get('/blogs-topic', userMiddleware, async (req, res) => {
         })
         if(topicBasedSearchData.length === 0){
             res.status(404).json({
-                msg: 'No search results found!'
+                msg: "No search results found (or) Invalid topic term!"
             })
         }
         else{
@@ -159,8 +159,8 @@ router.get('/blogs-topic', userMiddleware, async (req, res) => {
         }
     }
     catch(e){
-        res.status(400).json({
-            msg: 'Invalid search topic term!',
+        res.status(500).json({
+            msg: "Error Occured",
             error: e.message
         })
     }
