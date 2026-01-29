@@ -22,6 +22,9 @@
     },
     {
       "name": "Users"
+    },
+    {
+      "name": "Non-Existing Routes"
     }
   ],
   "paths": {
@@ -37,7 +40,7 @@
           {
             "name": "username",
             "in": "header",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string",
               "example": "admin2"
@@ -46,7 +49,7 @@
           {
             "name": "password",
             "in": "header",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string",
               "example": "ADMIN1234"
@@ -55,8 +58,17 @@
         ],
         "responses": {
           "200": {
-            "description": ""
-          }
+            "description": {
+                            "statusText": "OK",
+                            "msg": "Admin created successfully!!!"
+                           }
+                },
+          "400": {
+            "description": {
+                            "statusText": "BAD REQUEST",
+                            "msg": "Admin already exists try SignIn instead!!!"
+                           }
+                }
         }
       }
     },
@@ -72,7 +84,7 @@
           {
             "name": "username",
             "in": "header",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string",
               "example": "admin2"
@@ -81,7 +93,7 @@
           {
             "name": "password",
             "in": "header",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string",
               "example": "ADMIN1234"
@@ -90,8 +102,18 @@
         ],
         "responses": {
           "200": {
-            "description": ""
-          }
+            "description": {
+                            "statusText": "OK",
+                            "msg": "Signed in successfully!!!",
+                            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTYwMjQ1Nn0.qi3TR4GOaLTXiS7ncvIyCYrQWzIOhEuBxfRszADXPXs"
+                           }
+                },
+          "400": {
+            "description": {
+                            "statusText": "Bad Requset",
+                            "msg": "Invalid username or password"
+                           }
+                }
         }
       }
     },
@@ -103,26 +125,6 @@
         "summary": "Create Blog",
         "description": "Create Blog",
         "operationId": "createBlog",
-        "parameters": [
-          {
-            "name": "username",
-            "in": "header",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "example": "admin2"
-            }
-          },
-          {
-            "name": "password",
-            "in": "header",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "example": "ADMIN1234"
-            }
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -144,7 +146,23 @@
         },
         "responses": {
           "200": {
-            "description": ""
+            "description": {
+                            "statusText": "OK",
+                            "msg": "Blog created successfully!!!"
+                           }
+                },
+          "400": {
+            "description": {
+                            "statusText": "Bad Requset",
+                            "msg": "Invalid Inputs",
+                            "error": "invalid signature"
+                           }
+                },
+          "401": {
+            "description": {
+                            "statusText": "Unauthorized",
+                            "msg": "Authorization header missing!"
+                           }
           }
         }
       }
@@ -157,26 +175,6 @@
         "summary": "Edit Blog",
         "description": "Edit Blog",
         "operationId": "editBlog",
-        "parameters": [
-          {
-            "name": "username",
-            "in": "header",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "example": "admin2"
-            }
-          },
-          {
-            "name": "password",
-            "in": "header",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "example": "ADMIN1234"
-            }
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -196,7 +194,29 @@
         },
         "responses": {
           "200": {
-            "description": ""
+            "description": {
+                            "statusText": "OK",
+                            "msg": "Updated the blog successfully!"
+                           }
+                },
+          "404": {
+            "description": {
+                            "statusText": "Not Found",
+                            "msg": "Invalid BlogID (or) BlogID not found!"
+                           }
+                },
+          "400": {
+            "description": {
+                            "statusText": "Bad Requset",
+                            "msg": "Invalid Inputs",
+                            "error": "invalid signature"
+                           }
+          },
+          "401": {
+            "description": {
+                            "statusText": "Unauthorized",
+                            "msg": "Authorization header missing!"
+                           }
           }
         }
       }
@@ -209,30 +229,19 @@
         "summary": "Delete Blog",
         "description": "Delete Blog",
         "operationId": "deleteBlog",
-        "parameters": [
-          {
-            "name": "username",
-            "in": "header",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "example": "admin2"
-            }
-          },
-          {
-            "name": "password",
-            "in": "header",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "example": "ADMIN1234"
-            }
-          }
-        ],
         "responses": {
           "200": {
-            "description": ""
-          }
+            "description": {
+                            "statusText": "OK",
+                            "msg": "Removed the blog successfully!"
+                           }
+                },
+          "404": {
+            "description": {
+                            "statusText": "Not Found",
+                            "msg": "Invalid BlogID (or) BlogID not found!"
+                           }
+                }
         }
       }
     },
@@ -248,7 +257,7 @@
           {
             "name": "username",
             "in": "header",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string",
               "example": "number3.dev123"
@@ -257,7 +266,7 @@
           {
             "name": "password",
             "in": "header",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string",
               "example": "n3.dev123"
@@ -269,7 +278,9 @@
             "application/json": {
               "examples": {
                 "SignUp": {
-                  "value": ""
+                  "value": {
+                    "msg": "User created successfully!"
+                  }
                 }
               }
             }
@@ -277,7 +288,16 @@
         },
         "responses": {
           "200": {
-            "description": ""
+            "description": {
+              "statusText": "OK",
+              "msg": "User created successfully!"
+            }
+          },
+          "400": {
+            "description": {
+              "statusText": "Bad Requset",
+              "msg": "User already exists try (SignIn) instead!"
+            }
           }
         }
       }
@@ -294,7 +314,7 @@
           {
             "name": "username",
             "in": "header",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string",
               "example": "number3.dev123"
@@ -303,7 +323,7 @@
           {
             "name": "password",
             "in": "header",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string",
               "example": "n3.dev123"
@@ -319,8 +339,8 @@
               "examples": {
                 "SignIn": {
                   "value": {
-                    "password": "password2",
-                    "username": "User 2"
+                    "msg": "Signed in successfully!!!",
+                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU"
                   }
                 }
               }
@@ -329,18 +349,28 @@
         },
         "responses": {
           "200": {
-            "description": ""
+            "description": {
+              "statusText": "OK",
+              "msg": "Signed in successfully!!!",
+              "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU"
+            }
+          },
+          "400": {
+            "description": {
+                "statusText": "Bad Requset",
+                "msg": "Invalid username or password!"
+            }
           }
         }
       }
     },
-    "/user/blogs": {
+    "/user/blogs?page=1&limit=5": {
       "get": {
         "tags": [
           "Users"
         ],
-        "summary": "All Blogs",
-        "description": "All Blogs",
+        "summary": "Pagination With Limit",
+        "description": "Pagination With Limit",
         "operationId": "allBlogs",
         "parameters": [
           {
@@ -363,13 +393,67 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": ""
+          "200": {  
+            "description": {
+              "statusText": "OK",
+              "totalBlogs": 11,
+              "msg": "Pagination Succcessful",
+              "currentPage": 1,
+              "limitForPage": 5,
+              "totalPages": 3,
+              "blogsData": [
+                  {
+                      "_id": "6929865e3de2a4f78e6eed45",
+                      "title": "How to become a Python Full Stack Dev in (2025)",
+                      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                      "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                      "topic": "tech",
+                      "__v": 0
+                  },
+                  {
+                      "_id": "6929866b3de2a4f78e6eed47",
+                      "title": "How to become a Full Stack Dev in (2025)",
+                      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                      "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                      "topic": "tech",
+                      "__v": 0
+                  },
+                  {
+                      "_id": "692986bb823e75e591570385",
+                      "title": "How to become a Java Full Stack Dev in (2025)",
+                      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                      "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                      "topic": "tech",
+                      "__v": 0
+                  },
+                  {
+                      "_id": "69298713823e75e591570387",
+                      "title": "Will the sun explode in 5 billion years",
+                      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                      "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                      "topic": "science",
+                      "__v": 0
+                  },
+                  {
+                      "_id": "69298761823e75e591570389",
+                      "title": "How to make coding more interesting",
+                      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                      "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                      "topic": "tech",
+                      "__v": 0
+                  }
+              ]
+            }
+          },
+          "404" : {
+            "description": {
+              "error": "The page does not exist!"
+            }
           }
         }
       }
     },
-    "/user/blogs/6929866b3de2a4f78e6eed47": {
+    "/user/blogs/697a01541d612a03813bf1ce": {
       "get": {
         "tags": [
           "Users"
@@ -377,29 +461,26 @@
         "summary": "View Specific Blog",
         "description": "View Specific Blog",
         "operationId": "viewSpecificBlog",
-        "parameters": [
-          {
-            "name": "username",
-            "in": "header",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "example": "number3.dev123"
-            }
-          },
-          {
-            "name": "password",
-            "in": "header",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "example": "n3.dev123"
-            }
-          }
-        ],
         "responses": {
           "200": {
-            "description": ""
+            "description": {
+              "statusText": "OK",
+            "msg": "The specific blog found!",
+            "blog": {
+                "_id": "697a01541d612a03813bf1ce",
+                "title": "How to get a good tech job in 2026?",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                "topic": "tech",
+                "__v": 0
+              }
+            }
+          },
+          "404": {
+            "description": {
+              "statusText":"Not Found",
+              "msg": "Invalid BlogID (or) BlogID not found!"
+            }
           }
         }
       }
@@ -421,29 +502,69 @@
               "type": "string",
               "example": "science"
             }
-          },
-          {
-            "name": "username",
-            "in": "header",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "example": "number3.dev123"
-            }
-          },
-          {
-            "name": "password",
-            "in": "header",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "example": "n3.dev123"
-            }
           }
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": {
+              "statusText": "OK",
+                "searchedTopicData": [
+                    {
+                        "_id": "6929865e3de2a4f78e6eed45",
+                        "title": "How to become a Python Full Stack Dev in (2025)",
+                        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                        "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                        "topic": "tech",
+                        "__v": 0
+                    },
+                    {
+                        "_id": "6929866b3de2a4f78e6eed47",
+                        "title": "How to become a Full Stack Dev in (2025)",
+                        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                        "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                        "topic": "tech",
+                        "__v": 0
+                    },
+                    {
+                        "_id": "692986bb823e75e591570385",
+                        "title": "How to become a Java Full Stack Dev in (2025)",
+                        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                        "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                        "topic": "tech",
+                        "__v": 0
+                    },
+                    {
+                        "_id": "69298761823e75e591570389",
+                        "title": "How to make coding more interesting",
+                        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                        "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                        "topic": "tech",
+                        "__v": 0
+                    },
+                    {
+                        "_id": "69763c765afda2dca12c2a3e",
+                        "title": "Tech that changed the dynamics of 2025!",
+                        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                        "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                        "topic": "tech",
+                        "__v": 0
+                    },
+                    {
+                        "_id": "697a01541d612a03813bf1ce",
+                        "title": "How to get a good tech job in 2026?",
+                        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                        "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                        "topic": "tech",
+                        "__v": 0
+                    }
+                ]
+            }
+          },
+          "404" : {
+            "description": {
+                  "statusText":"Not Found",
+                  "msg": "No search results found (or) Invalid topic term!"
+            }
           }
         }
       }
@@ -456,32 +577,14 @@
         "summary": "Add to Favourite Blogs",
         "description": "Add to Favourite Blogs",
         "operationId": "addToFavouriteBlogs",
-        "parameters": [
-          {
-            "name": "username",
-            "in": "header",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "example": "number3.dev123"
-            }
-          },
-          {
-            "name": "password",
-            "in": "header",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "example": "n3.dev123"
-            }
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
               "examples": {
                 "Add to Favourite Blogs": {
-                  "value": ""
+                  "value": {
+                      "msg": "Added to Favourites Successfully!!"
+                  }
                 }
               }
             }
@@ -489,7 +592,16 @@
         },
         "responses": {
           "200": {
-            "description": ""
+            "description": {
+              "statusText": "OK",
+              "msg": "Added to Favourites Successfully!!"
+            }
+          },
+          "404": {
+            "description": {
+              "statusText": "Not Found",
+              "msg": "Invalid BlogID (or) BlogID not found!"
+            }
           }
         }
       }
@@ -502,26 +614,6 @@
         "summary": "View Favourite Blogs",
         "description": "View Favourite Blogs",
         "operationId": "viewFavouriteBlogs",
-        "parameters": [
-          {
-            "name": "username",
-            "in": "header",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "example": "number3.dev123"
-            }
-          },
-          {
-            "name": "password",
-            "in": "header",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "example": "n3.dev123"
-            }
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -531,8 +623,24 @@
               "examples": {
                 "View Favourite Blogs": {
                   "value": {
-                    "password": "password2",
-                    "username": "User 2"
+                      "favouriteBlogs": [
+                          {
+                              "_id": "69298713823e75e591570387",
+                              "title": "Will the sun explode in 5 billion years",
+                              "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                              "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                              "topic": "science",
+                              "__v": 0
+                          },
+                          {
+                              "_id": "697a01541d612a03813bf1ce",
+                              "title": "How to get a good tech job in 2026?",
+                              "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                              "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                              "topic": "tech",
+                              "__v": 0
+                          }
+                      ]
                   }
                 }
               }
@@ -541,7 +649,27 @@
         },
         "responses": {
           "200": {
-            "description": ""
+            "description" : {
+                "statusText": "OK",
+                "favouriteBlogs": [
+                    {
+                        "_id": "69298713823e75e591570387",
+                        "title": "Will the sun explode in 5 billion years",
+                        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                        "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                        "topic": "science",
+                        "__v": 0
+                    },
+                    {
+                        "_id": "697a01541d612a03813bf1ce",
+                        "title": "How to get a good tech job in 2026?",
+                        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                        "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                        "topic": "tech",
+                        "__v": 0
+                    }
+                ]
+            }
           }
         }
       }
