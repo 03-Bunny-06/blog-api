@@ -4,26 +4,18 @@ info:
   version: 1.0.0
   description: | 
     Blog API is a RESTful backend service for modern blogging platforms.
-    It provides secure authentication, role-based access, and CRUD operations for blog content.
 
-
-    🚀 **Features**:
-      - User authentication and authorization using JWT
-      - Role-based access control (Admin / User)
-      - CRUD operations for blog posts
-      - Protected routes with middleware
-      - Pagination and filtering support
-      - Well-documented REST APIs with Swagger UI
-
-    🛠 **Tech Stack**:
-      - Node.js & Express.js
-      - MongoDB with Mongoose ODM
-      - RESTful API architecture
-      - JWT-based authentication & authorization
-      - Swagger UI (OpenAPI 3.0) for API documentation
-      - Environment configuration using dotenv
-      - Deployed on Render
-
+    🚀 **Features**: 
+      - User authentication and authorization. 
+      - Blog post creation, editing, and deletion. 
+      - Secure and scalable REST endpoints. 
+      - Clean and scalable API architecture. 
+    
+    🛠 **Tech Stack**: 
+      - Node.js, Express.js & Mongo DB. 
+      - REST API principles. 
+      - JWT-based authentication. 
+      - Modular and maintainable codebase.
   contact: 
     name: Sai Kowshik 
     email: saikowshik0306@gmail.com 
@@ -2309,8 +2301,9 @@ components:
 
         - Use an **Admin JWT token.**
         - Paste the token in the **Authorize** button.
-        - Format must be exactly: 
-        `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss`
+        - _Note: Do not attach the Bearer in this only use the (raw token)_
+        - Format must be exactly only the _(raw token)_: 
+        `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss`
     UserAuth:
       type: http
       scheme: bearer
@@ -2320,5 +2313,6 @@ components:
 
         - Use an **User JWT token.**
         - Paste the token in the **Authorize** button.
-        - Format must be exactly: 
-        `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU`
+        - _Note: Do not attach the Bearer in this only use the (raw token)_
+        - Format must be exactly only the _(raw token)_:
+        `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU`
