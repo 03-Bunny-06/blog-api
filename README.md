@@ -1,4 +1,4 @@
-# Blog API 🚀
+# Blog API ✍️
 
 A robust and scalable RESTful API for a blog management system, built with Node.js, Express, and MongoDB. This project provides a complete backend solution with role-based access control, JWT authentication, and full CRUD operations for blog content.
 
@@ -61,14 +61,14 @@ To get a local copy up and running, follow these simple steps.
     ```env
     # .env
     DATABASE_URL="your_mongodb_connection_string"
-    PORT=3005
+    PORT=8080
     ```
 
 4.  **Start the server:**
     ```sh
     npm start
     ```
-    The server will be running on `http://localhost:3005` (or the port you specified).
+    The server will be running on `http://localhost:8080` (or the port you specified).
 
 ## API Endpoints
 
