@@ -7,7 +7,7 @@ The API is fully documented using OpenAPI (Swagger), providing an interactive wa
 **Live Demo:** [https://blog-api-cc47.onrender.com](https://blog-api-cc47.onrender.com)  
 **Live API Documentation:** [https://blog-api-cc47.onrender.com/api-docs](https://blog-api-cc47.onrender.com/api-docs)
 
-## Features
+## Features⚡
 
 - **Role-Based Access Control**: Differentiated routes and permissions for `Admin` and `User` roles.
 - **Authentication**: Secure user and admin authentication using JSON Web Tokens (JWT).
@@ -20,7 +20,7 @@ The API is fully documented using OpenAPI (Swagger), providing an interactive wa
 - **API Documentation**: Interactive API documentation powered by Swagger UI.
 - **Database Integration**: Seamlessly integrated with MongoDB using Mongoose for data modeling and persistence.
 
-## Tech Stack
+## Tech Stack 🚀
 
 | Technology         | Description                                |
 | ------------------ | ------------------------------------------ |
@@ -70,7 +70,7 @@ To get a local copy up and running, follow these simple steps.
     ```
     The server will be running on `http://localhost:8080` (or the port you specified).
 
-## API Endpoints
+## API Endpoints 🔗
 
 The API is structured into two main roles: `Admin` and `User`. All protected routes require a JWT token in the `Authorization` header (`Bearer <token>`).
 
