@@ -42,7 +42,7 @@ To get a local copy up and running, follow these simple steps.
 - npm
 - MongoDB (local instance or a cloud-hosted service like MongoDB Atlas)
 
-### Installation & Setup
+### Installation & Setup 📦
 
 1.  **Clone the repository:**
     ```sh
@@ -90,7 +90,7 @@ The API is structured into two main roles: `Admin` and `User`. All protected rou
 | ------ | ------------------------------- | ----------------------------------------------- | -------------- |
 | `POST` | `/signup`                       | Register a new user account.                    | Open           |
 | `POST` | `/signin`                       | Log in and receive an auth token.               | Open           |
-| `GET`  | `/blogs`                        | Get all blog posts, with optional pagination.   | Open           |
+| `GET`  | `/blogs`                        | Get all blog posts, with pagination and limit.   | Open           |
 | `GET`  | `/blogs/:blogId`                | Get details of a specific blog post.            | User           |
 | `GET`  | `/blogs-topic?t=<topic>`        | Filter blogs by a specific topic.               | User           |
 | `POST` | `/add-favourite-blog/:blogId`   | Add a blog to the user's favorites list.        | User           |
