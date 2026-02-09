@@ -932,23 +932,17 @@ paths:
       tags:
         - Users
       summary: SignUp
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example: ''
       parameters:
         - name: username
           in: header
           schema:
             type: string
-          example: number4.dev
+          example: number3.dev
         - name: password
           in: header
           schema:
             type: string
-          example: n4.dev123
+          example: n3.dev123
       responses:
         '200':
           description: OK
@@ -1089,25 +1083,17 @@ paths:
       tags:
         - Users
       summary: SignIn
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                username: User 2
-                password: password2
       parameters:
         - name: username
           in: header
           schema:
             type: string
-          example: number1.dev
+          example: number3.dev
         - name: password
           in: header
           schema:
             type: string
-          example: n1.dev123
+          example: n3.dev123
       responses:
         '200':
           description: OK
@@ -1175,7 +1161,7 @@ paths:
               example: |-
                 {
                     "msg": "Signed in successfully!!!",
-                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU"
+                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjMuZGV2IiwiaWF0IjoxNzcwNjEwOTc3fQ.jC2k0O7C-kkZVoUwAj3xPwFgJ0gx_c_9IRpQEToxiyQ"
                 }
         '400':
           description: Bad Request
@@ -2315,4 +2301,4 @@ components:
         - Paste the token in the **Authorize** button.
         - _Note: Do not attach the Bearer in this only use the (raw token)_
         - Format must be exactly only the _(raw token)_:
-        `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU`
+        `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjMuZGV2IiwiaWF0IjoxNzcwNjEwOTc3fQ.jC2k0O7C-kkZVoUwAj3xPwFgJ0gx_c_9IRpQEToxiyQ`
