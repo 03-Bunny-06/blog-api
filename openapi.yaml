@@ -5,6 +5,8 @@ info:
   description: | 
     Blog API is a RESTful backend service for modern blogging platforms.
 
+    _(**Note:** Authorize before trying to access unauthorized routes.)_
+
     🚀 **Features**: 
       - User authentication and authorization. 
       - Blog post creation, editing, and deletion. 
@@ -1972,12 +1974,6 @@ paths:
       tags:
         - Users
       summary: Add to Favourite Blogs
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example: ''
       responses:
         '200':
           description: OK
