@@ -96,7 +96,7 @@ The API is structured into two main roles: `Admin` and `User`. All protected rou
 | `POST` | `/add-favourite-blog/:blogId`   | Add a blog to the user's favorites list.        | User           |
 | `GET`  | `/my-favourite-blogs`           | View all blogs in the user's favorites list.    | User           |
 
-*(Note: The signup and signin can be done through postman as this a complete backend project with no frontend. So the postman acts as a frontend for request & response handling.)*
+*(Note: The signup and signin can be done through postman as this a complete backend project with no frontend. So the postman acts as a frontend for request & response handling or you can use the Swagger Documentation for API testing and request, response handling.)*
 
 ### Using the Postman Collection
 A Postman collection is included in the repository (`collection.json`). You can import this file into your Postman client to easily test all available API endpoints.
