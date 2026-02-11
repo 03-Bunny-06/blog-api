@@ -3,21 +3,19 @@ info:
   title: Blog API Documentation
   version: 1.0.0
   description: | 
-    Blog API is a RESTful backend service for modern blogging platforms.
+      A robust RESTful blog backend service built with Node.js, Express, and MongoDB, offering secure authentication, role-based access, full blog CRUD operations, favorites management, and interactive Swagger documentation.
 
-    _(**Note:** Authorize before trying to access unauthorized routes.)_
-
-    🚀 **Features**: 
-      - User authentication and authorization. 
-      - Blog post creation, editing, and deletion. 
-      - Secure and scalable REST endpoints. 
-      - Clean and scalable API architecture. 
-    
-    🛠 **Tech Stack**: 
-      - Node.js, Express.js & Mongo DB. 
-      - REST API principles. 
-      - JWT-based authentication. 
-      - Modular and maintainable codebase.
+      🚀 **Key Features**: 
+        - **Secure Authentication:** JWT-based authentication for users and admins.
+        - **Role-Based Access:** Admin and user routes with permission controls.
+        - **Blog CRUD Operations:** Create, read, update, delete blog posts with pagination and filters.
+        - **Favorites System:** Users can add and view favorite blogs.
+      
+      🛠 **Tech Stack**: 
+        - **Node.js:** JavaScript runtime for server-side logic. 
+        - **Express.js:** Lightweight REST API framework handling routing and HTTP requests.
+        - **MongoDB & Mongoose:** NoSQL database and ODM for storage and schema modeling.
+        - **JWT & Swagger (OpenAPI):** JSON Web Tokens for secure sessions and Swagger for API documentation.
   contact: 
     name: Sai Kowshik 
     email: saikowshik0306@gmail.com 
