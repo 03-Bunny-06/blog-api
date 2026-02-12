@@ -3,26 +3,17 @@ env.config();
 
 const express = require("express");
 const swaggerUi = require("swagger-ui-express");
-const path = require("path");
+const YAML = require("yaml");
+const fs = require("fs");
 const bodyParser = require("body-parser");
 const app = express();
 const adminRouter = require("./routes/admin");
 const userRouter = require("./routes/user");
 
-const openApiSpec = require("./openapi.json");
-const { url } = require('inspector');
+const file = fs.readFileSync("openapi.yaml", "utf8");
+const swaggerDocument = YAML.parse(file);
 
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(null, 
-  {
-    swaggerOptions: {
-      url: "/openapi.yaml"
-    } 
-  })
-);
-
-app.get("/openapi.yaml", (req, res) => {
-  res.sendFile(path.join(__dirname, "openapi.yaml"))
-})
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(bodyParser.json());
 app.use('/admin', adminRouter);

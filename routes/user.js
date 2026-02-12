@@ -58,54 +58,53 @@ router.post('/signin', async (req, res) => {
 //Pagination with Pages and Limit
 
 //Performs both viewing all blogs or pagination with limit in the same API
-router.get('/blogs', async (req, res) => {
-    try{
-        const p = req.query.page;
-        const l = req.query.limit;
-        console.log({p, l});
 
-        const hasPagination = (p != (undefined || NaN || '') && l != (undefined || NaN || ''));
-        console.log(hasPagination);
+//Making sure the valid number is not a negative number so there would be an issue to fetch the pages with limit.
 
-        //Making sure the valid number is not a negative number so there would be an issue to fetch the pages with limit.
-        if (hasPagination){
-            globalThis.page = Math.max(1, parseInt(p));
-            globalThis.limit = Math.max(1, parseInt(l));
-            console.log({page, limit})
-        }
-
-        const totalBlogs = await Blogs.countDocuments({});
-        const totalPages = Math.ceil(totalBlogs/limit);
-
-        let query = Blogs.find();
-
-        //Here if the page we were trying to query is 5 but only 3 pages exist that gives an Falsy Value and in the same way if there are no documents
-        //in the Collection the 0 would bu the totalBlogs that would not be greater than 0 that gives Falsy Value both these cases might give a
-        //issue while trying to query so these cases are important.
+//Here if the page we were trying to query is 5 but only 3 pages exist that gives an Falsy Value and in the same way if there are no documents
+//in the Collection the 0 would bu the totalBlogs that would not be greater than 0 that gives Falsy Value both these cases might give a
+//issue while trying to query so these cases are important.
         
-        //Skip is used to skip the number of pages if the given page is above 1
-        //For page = 1 limit = 5 it would be (1-1) * 5 = 0 so no skip straight up need to fetch the first five blogs.
+//Skip is used to skip the number of pages if the given page is above 1
+//For page = 1 limit = 5 it would be (1-1) * 5 = 0 so no skip straight up need to fetch the first five blogs.
+
+router.get('/blogs', async (req, res) => {
+    const p = req.query.page;
+    const l = req.query.limit;
+
+    const hasPagination = !!(p || l);
+    console.log("has pagination: " + hasPagination);
+
+    let pageNum, limitNum, totalBlogs, totalPages;
+
+    try{
+        query = Blogs.find({});
 
         if (hasPagination){
-            if (page > totalPages && totalBlogs > 0){
-                res.status(400).json({
-                    error: "The page does not exist!"
+            pageNum = Math.max(1, Number(p));
+            limitNum = Math.max(5, Number(l));
+        
+            totalBlogs = await Blogs.countDocuments({});
+            totalPages = Math.ceil(totalBlogs/limitNum);
+
+            if (pageNum > totalPages && totalBlogs > 0){
+                return res.status(404).json({
+                    msg: "The page does not exist!"
                 })
             }
 
-            const skip = (page - 1) * limit; 
-            query = query.skip(skip).limit(limit);
-            console.log({ page, limit, skip });
+            const skipNum = (pageNum - 1) * limitNum; 
+            query = query.skip(skipNum).limit(limitNum);
         }
 
         const blogsData = await query;
 
         res.status(200).json({
             totalBlogs: totalBlogs,
-            ...(page && limit && {
+            ...(hasPagination && {
                 msg: "Pagination Succcessful",
-                currentPage: page,
-                limitForPage: limit,
+                currentPage: pageNum,
+                limitForPage: limitNum,
                 totalPages: totalPages
             })
             ,blogsData: blogsData
@@ -140,7 +139,7 @@ router.get('/blogs/:blogId', userMiddleware, async (req, res) => {
 })
 
 //Filter Based on Topic feild Ex: /blog-topic?t=tech
-router.get('/blogs-topic', userMiddleware, async (req, res) => {
+router.get('/search', userMiddleware, async (req, res) => {
     const topicTerm = req.query.t;
 
     try{
