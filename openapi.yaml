@@ -3,27 +3,19 @@ info:
   title: Blog API Documentation
   version: 1.0.0
   description: | 
-    Blog API is a RESTful backend service for modern blogging platforms.
-    It provides secure authentication, role-based access, and CRUD operations for blog content.
+      A robust RESTful blog backend service built with Node.js, Express, and MongoDB, offering secure authentication, role-based access, full blog CRUD operations, favorites management, and interactive Swagger documentation.
 
-
-    🚀 **Features**:
-      - User authentication and authorization using JWT
-      - Role-based access control (Admin / User)
-      - CRUD operations for blog posts
-      - Protected routes with middleware
-      - Pagination and filtering support
-      - Well-documented REST APIs with Swagger UI
-
-    🛠 **Tech Stack**:
-      - Node.js & Express.js
-      - MongoDB with Mongoose ODM
-      - RESTful API architecture
-      - JWT-based authentication & authorization
-      - Swagger UI (OpenAPI 3.0) for API documentation
-      - Environment configuration using dotenv
-      - Deployed on Render
-
+      🚀 **Key Features**: 
+        - **Secure Authentication:** JWT-based authentication for users and admins.
+        - **Role-Based Access:** Admin and user routes with permission controls.
+        - **Blog CRUD Operations:** Create, read, update, delete blog posts with pagination and filters.
+        - **Favorites System:** Users can add and view favorite blogs.
+      
+      🛠 **Tech Stack**: 
+        - **Node.js:** JavaScript runtime for server-side logic. 
+        - **Express.js:** Lightweight REST API framework handling routing and HTTP requests.
+        - **MongoDB & Mongoose:** NoSQL database and ODM for storage and schema modeling.
+        - **JWT & Swagger (OpenAPI):** JSON Web Tokens for secure sessions and Swagger for API documentation.
   contact: 
     name: Sai Kowshik 
     email: saikowshik0306@gmail.com 
@@ -940,23 +932,17 @@ paths:
       tags:
         - Users
       summary: SignUp
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example: ''
       parameters:
         - name: username
           in: header
           schema:
             type: string
-          example: number4.dev
+          example: number3.dev
         - name: password
           in: header
           schema:
             type: string
-          example: n4.dev123
+          example: n3.dev123
       responses:
         '200':
           description: OK
@@ -1097,25 +1083,17 @@ paths:
       tags:
         - Users
       summary: SignIn
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                username: User 2
-                password: password2
       parameters:
         - name: username
           in: header
           schema:
             type: string
-          example: number1.dev
+          example: number3.dev
         - name: password
           in: header
           schema:
             type: string
-          example: n1.dev123
+          example: n3.dev123
       responses:
         '200':
           description: OK
@@ -1183,7 +1161,7 @@ paths:
               example: |-
                 {
                     "msg": "Signed in successfully!!!",
-                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU"
+                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjMuZGV2IiwiaWF0IjoxNzcwNjEwOTc3fQ.jC2k0O7C-kkZVoUwAj3xPwFgJ0gx_c_9IRpQEToxiyQ"
                 }
         '400':
           description: Bad Request
@@ -1994,12 +1972,6 @@ paths:
       tags:
         - Users
       summary: Add to Favourite Blogs
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example: ''
       responses:
         '200':
           description: OK
@@ -2309,8 +2281,9 @@ components:
 
         - Use an **Admin JWT token.**
         - Paste the token in the **Authorize** button.
-        - Format must be exactly: 
-        `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss`
+        - _Note: Do not attach the Bearer in this only use the (raw token)_
+        - Format must be exactly only the _(raw token)_: 
+        `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss`
     UserAuth:
       type: http
       scheme: bearer
@@ -2320,5 +2293,6 @@ components:
 
         - Use an **User JWT token.**
         - Paste the token in the **Authorize** button.
-        - Format must be exactly: 
-        `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjEuZGV2IiwiaWF0IjoxNzY5NjY0OTEzfQ.so-Jl2xF8u7mYRy_MyNTwyPiqvlvE-1Dgnti9wAEEnU`
+        - _Note: Do not attach the Bearer in this only use the (raw token)_
+        - Format must be exactly only the _(raw token)_:
+        `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjMuZGV2IiwiaWF0IjoxNzcwNjEwOTc3fQ.jC2k0O7C-kkZVoUwAj3xPwFgJ0gx_c_9IRpQEToxiyQ`
