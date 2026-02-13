@@ -92,7 +92,7 @@ The API is structured into two main roles: `Admin` and `User`. All protected rou
 | `POST` | `/signin`                       | Log in and receive an auth token.               | Open           |
 | `GET`  | `/blogs`                        | Get all blog posts, with pagination and limit.   | Open           |
 | `GET`  | `/blogs/:blogId`                | Get details of a specific blog post.            | User           |
-| `GET`  | `/blogs-topic?t=<topic>`        | Filter blogs by a specific topic.               | User           |
+| `GET`  | `/search?t=<topic>`        | Filter blogs by a specific topic.               | User           |
 | `POST` | `/add-favourite-blog/:blogId`   | Add a blog to the user's favorites list.        | User           |
 | `GET`  | `/my-favourite-blogs`           | View all blogs in the user's favorites list.    | User           |
 
