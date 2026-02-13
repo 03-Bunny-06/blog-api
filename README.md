@@ -68,7 +68,7 @@ To get a local copy up and running, follow these simple steps.
     ```sh
     npm start
     ```
-    The server will be running on `http://localhost:8080` (or the port you specified).
+The server will start on the port specified in your `.env` file (or 8080 by default). You can access the API documentation at `http://localhost:8080/api-docs`.
 
 ## API Endpoints 🔗
 
