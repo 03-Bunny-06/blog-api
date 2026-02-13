@@ -32,7 +32,7 @@ The API is fully documented using OpenAPI (Swagger), providing an interactive wa
 | **dotenv**         | For managing environment variables         |
 | **Swagger UI**     | For generating interactive API documentation |
 
-## Getting Started
+## Getting Started ⚙️
 
 To get a local copy up and running, follow these simple steps.
 
