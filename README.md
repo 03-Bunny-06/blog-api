@@ -70,6 +70,41 @@ To get a local copy up and running, follow these simple steps.
     ```
 The server will start on the port specified in your `.env` file (or 8080 by default). You can access the API documentation at `http://localhost:8080/api-docs`.
 
+## Data Models 🗂️
+
+### Admin Schema
+
+```javascript
+{
+    username: String,
+    password: String
+}
+```
+
+### User Schema
+
+```javascript
+{
+    username: String,
+    password: String,
+    favouriteBlogs: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Blogs'
+    }]
+}
+```
+
+### Blogs Schema
+
+```javascript
+{
+    title: String,
+    description: String,
+    imageLink: String,
+    topic: String
+}
+```
+
 ## API Endpoints 🔗
 
 The API is structured into two main roles: `Admin` and `User`. All protected routes require a JWT token in the `Authorization` header (`Bearer <token>`).
