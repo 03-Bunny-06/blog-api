@@ -32,7 +32,7 @@ The API is fully documented using OpenAPI (Swagger), providing an interactive wa
 | **dotenv**         | For managing environment variables         |
 | **Swagger UI**     | For generating interactive API documentation |
 
-## Getting Started
+## Getting Started ⚙️
 
 To get a local copy up and running, follow these simple steps.
 
@@ -68,7 +68,42 @@ To get a local copy up and running, follow these simple steps.
     ```sh
     npm start
     ```
-    The server will be running on `http://localhost:8080` (or the port you specified).
+The server will start on the port specified in your `.env` file (or 8080 by default). You can access the API documentation at `http://localhost:8080/api-docs`.
+
+## Data Models 🗂️
+
+### Admin Schema
+
+```javascript
+{
+    username: String,
+    password: String
+}
+```
+
+### User Schema
+
+```javascript
+{
+    username: String,
+    password: String,
+    favouriteBlogs: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Blogs'
+    }]
+}
+```
+
+### Blogs Schema
+
+```javascript
+{
+    title: String,
+    description: String,
+    imageLink: String,
+    topic: String
+}
+```
 
 ## API Endpoints 🔗
 
@@ -92,7 +127,7 @@ The API is structured into two main roles: `Admin` and `User`. All protected rou
 | `POST` | `/signin`                       | Log in and receive an auth token.               | Open           |
 | `GET`  | `/blogs`                        | Get all blog posts, with pagination and limit.   | Open           |
 | `GET`  | `/blogs/:blogId`                | Get details of a specific blog post.            | User           |
-| `GET`  | `/blogs-topic?t=<topic>`        | Filter blogs by a specific topic.               | User           |
+| `GET`  | `/search?t=<topic>`        | Filter blogs by a specific topic.               | User           |
 | `POST` | `/add-favourite-blog/:blogId`   | Add a blog to the user's favorites list.        | User           |
 | `GET`  | `/my-favourite-blogs`           | View all blogs in the user's favorites list.    | User           |
 
