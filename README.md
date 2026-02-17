@@ -4,8 +4,8 @@ A robust and scalable RESTful API for a blog management system, built with Node.
 
 The API is fully documented using OpenAPI (Swagger), providing an interactive way to explore and test the endpoints.
 
-**Live Demo:** [https://blog-api-cc47.onrender.com](https://blog-api-cc47.onrender.com)  
-**Live API Documentation:** [https://blog-api-cc47.onrender.com/api-docs](https://blog-api-cc47.onrender.com/api-docs)
+**Live Demo:** [https://api-blog-management.onrender.com](https://api-blog-management.onrender.com/user/blogs)  
+**Live API Documentation:** [https://api-blog-management.onrender.com/api-docs](https://api-blog-management.onrender.com/api-docs)
 
 ## Features⚡
 
