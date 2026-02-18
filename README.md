@@ -134,7 +134,7 @@ The API is structured into two main roles: `Admin` and `User`. All protected rou
 
 *(Note: The signup and signin can be done through postman as this a complete backend project with no frontend. So the postman acts as a frontend for request & response handling or you can use the Swagger Documentation for API testing and request, response handling.)*
 
-## API Testing – Postman Collection 🧪
+## API Testing with Postman 🧪
 
 - The repository includes a `collection.json` file exported from Postman.  
 - It contains structured test folders covering authentication, CRUD operations, protected routes, and error cases.  
