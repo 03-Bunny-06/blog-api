@@ -4,8 +4,8 @@ A robust and scalable RESTful API for a blog management system, built with Node.
 
 The API is fully documented using OpenAPI (Swagger), providing an interactive way to explore and test the endpoints.
 
-**Live Demo:** [https://blog-api-cc47.onrender.com](https://blog-api-cc47.onrender.com)  
-**Live API Documentation:** [https://blog-api-cc47.onrender.com/api-docs](https://blog-api-cc47.onrender.com/api-docs)
+**Live Demo:** [https://api-blog-management.onrender.com](https://api-blog-management.onrender.com/user/blogs)  
+**Live API Documentation:** [https://api-blog-management.onrender.com/api-docs](https://api-blog-management.onrender.com/api-docs)
 
 ## Features⚡
 
@@ -30,6 +30,7 @@ The API is fully documented using OpenAPI (Swagger), providing an interactive wa
 | **Mongoose**       | ODM library for MongoDB and Node.js        |
 | **JSON Web Token (JWT)** | For securing endpoints and managing sessions |
 | **dotenv**         | For managing environment variables         |
+| **Postman**       | API endpoints testing        |
 | **Swagger UI**     | For generating interactive API documentation |
 
 ## Getting Started ⚙️
@@ -133,5 +134,15 @@ The API is structured into two main roles: `Admin` and `User`. All protected rou
 
 *(Note: The signup and signin can be done through postman as this a complete backend project with no frontend. So the postman acts as a frontend for request & response handling or you can use the Swagger Documentation for API testing and request, response handling.)*
 
-### Using the Postman Collection
-A Postman collection is included in the repository (`collection.json`). You can import this file into your Postman client to easily test all available API endpoints.
+## API Testing with Postman 🧪
+
+- The repository includes a `collection.json` file exported from Postman.  
+- It contains structured test folders covering authentication, CRUD operations, protected routes, and error cases.  
+- You can import this collection directly into Postman to run predefined requests against the API.
+
+### Import Instructions
+
+1. Open Postman
+2. Click Import
+3. Load the `collection.json` file
+4. Start testing the endpoints
