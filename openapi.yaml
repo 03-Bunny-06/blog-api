@@ -21,7 +21,7 @@ info:
     email: saikowshik0306@gmail.com 
     url: https://github.com/03-Bunny-06/blog-api
 servers:
-  - url: https://blog-api-cc47.onrender.com
+  - url: https://api-blog-management.onrender.com
 tags:
   - name: Admin
   - name: Users
@@ -42,12 +42,12 @@ paths:
           in: header
           schema:
             type: string
-          example: admin4
+          example: admin01
         - name: password
           in: header
           schema:
             type: string
-          example: ADMIN1234
+          example: Admin@01
       responses:
         '200':
           description: OK
@@ -195,12 +195,12 @@ paths:
           in: header
           schema:
             type: string
-          example: admin2
+          example: admin01
         - name: password
           in: header
           schema:
             type: string
-          example: ADMIN123
+          example: Admin@01
       responses:
         '200':
           description: OK
@@ -348,14 +348,13 @@ paths:
             schema:
               type: object
               example:
-                title: How to get a good tech job in 2026?
+                title: Building Healthy Daily Habits
                 description: >-
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s.
+                  Simple lifestyle changes that can improve your mental and
+                  physical well-being.
                 imageLink: >-
-                  https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png
-                topic: tech
+                  https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true
+                topic: Lifestyle
       responses:
         '200':
           description: OK
@@ -559,7 +558,7 @@ paths:
                 {
                     "msg": "Authorization header missing!"
                 }
-  /admin/edit-blog/6929b06d8c75ac139670d7fb:
+  /admin/edit-blog/6996f01c0de880aa880353d8:
     put:
       tags:
         - Admin
@@ -570,11 +569,10 @@ paths:
             schema:
               type: object
               example:
-                title: The Great Tech Infrastructure of 2025!
+                title: The Power of Data Analytics
                 description: >-
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s.
+                  Turning raw data into meaningful business insights with Tablue
+                  and Power BI.
       responses:
         '200':
           description: OK
@@ -649,7 +647,7 @@ paths:
             Date:
               schema:
                 type: string
-                example: Thu, 29 Jan 2026 04:17:58 GMT
+                example: Thu, 29 Jan 2026 04:21:10 GMT
             Content-Type:
               schema:
                 type: string
@@ -657,7 +655,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '47'
+                example: '51'
             Connection:
               schema:
                 type: string
@@ -665,7 +663,7 @@ paths:
             CF-RAY:
               schema:
                 type: string
-                example: 9c55ec423adc8cb2-HYD
+                example: 9c55f0f2381f29b7-HYD
             Content-Encoding:
               schema:
                 type: string
@@ -673,11 +671,11 @@ paths:
             etag:
               schema:
                 type: string
-                example: W/"2f-t66VnUhhPskb8nIp16RamAJEimU"
+                example: W/"34-S0PzxGUcUMhh9HTXYRfWzDRiaK8"
             rndr-id:
               schema:
                 type: string
-                example: dd93e9dc-60bb-4a60
+                example: f24fdf3e-1699-4e84
             vary:
               schema:
                 type: string
@@ -706,20 +704,11 @@ paths:
             text/plain:
               schema:
                 type: string
-              examples:
-                example-0:
-                  summary: Invalid Blog ID
-                  value: |-
-                    {
-                        "msg": "Invalid BlogID (or) BlogID not found!"
-                    }
-                example-1:
-                  summary: Invalid Auth Token
-                  value: |-
-                    {
-                        "msg": "Invalid Inputs",
-                        "error": "invalid signature"
-                    }
+              example: |-
+                {
+                    "msg": "Invalid Inputs",
+                    "error": "invalid signature"
+                }
         '401':
           description: Unauthorized
           headers:
@@ -787,7 +776,74 @@ paths:
                 {
                     "msg": "Authorization header missing!"
                 }
-  /admin/delete-blog/692987ba823e75e59157038d:
+        '404':
+          description: Not Found
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Thu, 29 Jan 2026 04:17:58 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '47'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-RAY:
+              schema:
+                type: string
+                example: 9c55ec423adc8cb2-HYD
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            etag:
+              schema:
+                type: string
+                example: W/"2f-t66VnUhhPskb8nIp16RamAJEimU"
+            rndr-id:
+              schema:
+                type: string
+                example: dd93e9dc-60bb-4a60
+            vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            cf-cache-status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Invalid BlogID (or) BlogID not found!"
+                }
+  /admin/delete-blog/6996f01c0de880aa880353d8:
     delete:
       tags:
         - Admin
@@ -860,8 +916,8 @@ paths:
                 {
                     "msg": "Removed the blog successfully!"
                 }
-        '400':
-          description: Bad Request
+        '404':
+          description: Not Found
           headers:
             Date:
               schema:
@@ -932,17 +988,23 @@ paths:
       tags:
         - Users
       summary: SignUp
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ''
       parameters:
         - name: username
           in: header
           schema:
             type: string
-          example: number3.dev
+          example: user01
         - name: password
           in: header
           schema:
             type: string
-          example: n3.dev123
+          example: User@01
       responses:
         '200':
           description: OK
@@ -1083,17 +1145,25 @@ paths:
       tags:
         - Users
       summary: SignIn
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                username: User 2
+                password: password2
       parameters:
         - name: username
           in: header
           schema:
             type: string
-          example: number3.dev
+          example: user01
         - name: password
           in: header
           schema:
             type: string
-          example: n3.dev123
+          example: User@01
       responses:
         '200':
           description: OK
@@ -1161,7 +1231,7 @@ paths:
               example: |-
                 {
                     "msg": "Signed in successfully!!!",
-                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjMuZGV2IiwiaWF0IjoxNzcwNjEwOTc3fQ.jC2k0O7C-kkZVoUwAj3xPwFgJ0gx_c_9IRpQEToxiyQ"
+                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwMSIsImlhdCI6MTc3MTU2NTIzN30.IDRJgePk3aW2BTipbMC7Ni30F5afeCNuX18LG4up-88"
                 }
         '400':
           description: Bad Request
@@ -1245,7 +1315,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '5'
+          example: '10'
       responses:
         '200':
           description: OK
@@ -1253,7 +1323,7 @@ paths:
             Date:
               schema:
                 type: string
-                example: Thu, 29 Jan 2026 05:56:23 GMT
+                example: Fri, 20 Feb 2026 05:45:47 GMT
             Content-Type:
               schema:
                 type: string
@@ -1261,7 +1331,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '467'
+                example: '605'
             Connection:
               schema:
                 type: string
@@ -1269,7 +1339,7 @@ paths:
             CF-RAY:
               schema:
                 type: string
-                example: 9c567c6b4c89d81d-HYD
+                example: 9d0bb325ce4e3460-HYD
             Content-Encoding:
               schema:
                 type: string
@@ -1277,11 +1347,11 @@ paths:
             etag:
               schema:
                 type: string
-                example: W/"865-KHyZHSYcNnVD/Cx9KV/WvXsDGTM"
+                example: W/"6d3-Qu1v18DWvFKZBWOjoAtQdV9Fs9w"
             rndr-id:
               schema:
                 type: string
-                example: d238747c-5a48-43f8
+                example: 49c5ef7c-50e4-4dbf
             vary:
               schema:
                 type: string
@@ -1312,208 +1382,156 @@ paths:
                 type: string
               examples:
                 example-0:
-                  summary: Successful Response
+                  summary: Successful Reponse with Page and Limit
                   value: |-
                     {
-                        "totalBlogs": 11,
+                        "totalBlogs": 14,
                         "msg": "Pagination Succcessful",
                         "currentPage": 1,
                         "limitForPage": 5,
                         "totalPages": 3,
                         "blogsData": [
                             {
-                                "_id": "6929865e3de2a4f78e6eed45",
-                                "title": "How to become a Python Full Stack Dev in (2025)",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "_id": "6996edfa0de880aa880353c0",
+                                "title": "The Future of Artificial Intelligence",
+                                "description": "Exploring how AI is reshaping industries and everyday life.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
                                 "topic": "tech",
                                 "__v": 0
                             },
                             {
-                                "_id": "6929866b3de2a4f78e6eed47",
-                                "title": "How to become a Full Stack Dev in (2025)",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "tech",
-                                "__v": 0
-                            },
-                            {
-                                "_id": "692986bb823e75e591570385",
-                                "title": "How to become a Java Full Stack Dev in (2025)",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "tech",
-                                "__v": 0
-                            },
-                            {
-                                "_id": "69298713823e75e591570387",
-                                "title": "Will the sun explode in 5 billion years",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "_id": "6996eeba0de880aa880353c2",
+                                "title": "Space Exploration in 2026",
+                                "description": "A look at recent advancements in interplanetary missions.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
                                 "topic": "science",
                                 "__v": 0
                             },
                             {
-                                "_id": "69298761823e75e591570389",
-                                "title": "How to make coding more interesting",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "_id": "6996eed90de880aa880353c4",
+                                "title": "Understanding Blockchain Technology",
+                                "description": "Breaking down how blockchain secures digital transactions.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
+                                "topic": "tech",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6996eef70de880aa880353c6",
+                                "title": "The Rise of Renewable Energy",
+                                "description": "How solar and wind power are transforming global energy systems.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
+                                "topic": "science",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6996ef2a0de880aa880353c8",
+                                "title": "Cybersecurity in the Modern Era",
+                                "description": "Key strategies to protect data in a connected world.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
                                 "topic": "tech",
                                 "__v": 0
                             }
                         ]
                     }
                 example-1:
-                  summary: Successful Response for High Limit
+                  summary: Successful Response with Higher Limit
                   value: |-
                     {
-                        "totalBlogs": 11,
+                        "totalBlogs": 14,
                         "msg": "Pagination Succcessful",
                         "currentPage": 1,
                         "limitForPage": 10,
                         "totalPages": 2,
                         "blogsData": [
                             {
-                                "_id": "6929865e3de2a4f78e6eed45",
-                                "title": "How to become a Python Full Stack Dev in (2025)",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "_id": "6996edfa0de880aa880353c0",
+                                "title": "The Future of Artificial Intelligence",
+                                "description": "Exploring how AI is reshaping industries and everyday life.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
                                 "topic": "tech",
                                 "__v": 0
                             },
                             {
-                                "_id": "6929866b3de2a4f78e6eed47",
-                                "title": "How to become a Full Stack Dev in (2025)",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "_id": "6996eeba0de880aa880353c2",
+                                "title": "Space Exploration in 2026",
+                                "description": "A look at recent advancements in interplanetary missions.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
+                                "topic": "science",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6996eed90de880aa880353c4",
+                                "title": "Understanding Blockchain Technology",
+                                "description": "Breaking down how blockchain secures digital transactions.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
                                 "topic": "tech",
                                 "__v": 0
                             },
                             {
-                                "_id": "692986bb823e75e591570385",
-                                "title": "How to become a Java Full Stack Dev in (2025)",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "_id": "6996eef70de880aa880353c6",
+                                "title": "The Rise of Renewable Energy",
+                                "description": "How solar and wind power are transforming global energy systems.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
+                                "topic": "science",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6996ef2a0de880aa880353c8",
+                                "title": "Cybersecurity in the Modern Era",
+                                "description": "Key strategies to protect data in a connected world.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
                                 "topic": "tech",
                                 "__v": 0
                             },
                             {
-                                "_id": "69298713823e75e591570387",
-                                "title": "Will the sun explode in 5 billion years",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "science",
+                                "_id": "6996ef4e0de880aa880353ca",
+                                "title": "The Psychology of Productivity",
+                                "description": "Simple habits that can boost focus and efficiency.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
+                                "topic": "lifestyle",
                                 "__v": 0
                             },
                             {
-                                "_id": "69298761823e75e591570389",
-                                "title": "How to make coding more interesting",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "_id": "6996ef660de880aa880353cc",
+                                "title": "Climate Change and Innovation",
+                                "description": "New technologies helping combat global warming.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
                                 "topic": "tech",
                                 "__v": 0
                             },
                             {
-                                "_id": "6929879c823e75e59157038b",
-                                "title": "Is ATLAS 3I an interstellar comet or an UFO",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "science",
-                                "__v": 0
-                            },
-                            {
-                                "_id": "69298805823e75e59157038f",
-                                "title": "Did NASA really land on moon or is it",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "science",
-                                "__v": 0
-                            },
-                            {
-                                "_id": "6929b06d8c75ac139670d7fb",
-                                "title": "The Great Tech Infrastructure of 2025!",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "science",
-                                "__v": 0
-                            },
-                            {
-                                "_id": "69763c765afda2dca12c2a3e",
-                                "title": "Tech that changed the dynamics of 2025!",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                                "_id": "6996ef820de880aa880353ce",
+                                "title": "The Evolution of Smartphones",
+                                "description": "From early mobile phones to modern smart devices.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
                                 "topic": "tech",
                                 "__v": 0
                             },
                             {
-                                "_id": "697641935afda2dca12c2a42",
-                                "title": "Does Aliens really exist ?",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "science",
+                                "_id": "6996efa10de880aa880353d0",
+                                "title": "Exploring the Human Brain",
+                                "description": "Recent discoveries in neuroscience and cognition.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
+                                "topic": "health",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6996efc50de880aa880353d2",
+                                "title": "The Growth of E-Commerce",
+                                "description": "How online shopping is redefining retail markets.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
+                                "topic": "tech",
                                 "__v": 0
                             }
                         ]
                     }
-                example-2:
-                  summary: Successful Response for Existing Custom Page
-                  value: |-
-                    {
-                        "totalBlogs": 11,
-                        "msg": "Pagination Succcessful",
-                        "currentPage": 2,
-                        "limitForPage": 5,
-                        "totalPages": 3,
-                        "blogsData": [
-                            {
-                                "_id": "6929879c823e75e59157038b",
-                                "title": "Is ATLAS 3I an interstellar comet or an UFO",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "science",
-                                "__v": 0
-                            },
-                            {
-                                "_id": "69298805823e75e59157038f",
-                                "title": "Did NASA really land on moon or is it",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "science",
-                                "__v": 0
-                            },
-                            {
-                                "_id": "6929b06d8c75ac139670d7fb",
-                                "title": "The Great Tech Infrastructure of 2025!",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "science",
-                                "__v": 0
-                            },
-                            {
-                                "_id": "69763c765afda2dca12c2a3e",
-                                "title": "Tech that changed the dynamics of 2025!",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "tech",
-                                "__v": 0
-                            },
-                            {
-                                "_id": "697641935afda2dca12c2a42",
-                                "title": "Does Aliens really exist ?",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "science",
-                                "__v": 0
-                            }
-                        ]
-                    }
-        '400':
-          description: Bad Request
+        '404':
+          description: Not Found
           headers:
             Date:
               schema:
                 type: string
-                example: Thu, 29 Jan 2026 05:57:09 GMT
+                example: Fri, 20 Feb 2026 05:46:39 GMT
             Content-Type:
               schema:
                 type: string
@@ -1521,7 +1539,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '40'
+                example: '38'
             Connection:
               schema:
                 type: string
@@ -1529,7 +1547,7 @@ paths:
             CF-RAY:
               schema:
                 type: string
-                example: 9c567d85ebe3d81d-HYD
+                example: 9d0bb46afb363460-HYD
             Content-Encoding:
               schema:
                 type: string
@@ -1537,11 +1555,11 @@ paths:
             etag:
               schema:
                 type: string
-                example: W/"24-tjX2j97T2qitGPQVeJ4IdgbUPCU"
+                example: W/"22-HhjacOp44fFG+H/yYcwyuEARsHo"
             rndr-id:
               schema:
                 type: string
-                example: d8cc72b2-9b35-4c34
+                example: a84425ff-d008-4302
             vary:
               schema:
                 type: string
@@ -1572,9 +1590,9 @@ paths:
                 type: string
               example: |-
                 {
-                    "error": "The page does not exist!"
+                    "msg": "The page does not exist!"
                 }
-  /user/blogs/697a01541d612a03813bf1ce:
+  /user/blogs/6996edfa0de880aa880353c0:
     get:
       tags:
         - Users
@@ -1586,7 +1604,7 @@ paths:
             Date:
               schema:
                 type: string
-                example: Thu, 29 Jan 2026 05:39:31 GMT
+                example: Fri, 20 Feb 2026 05:32:21 GMT
             Content-Type:
               schema:
                 type: string
@@ -1594,7 +1612,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '318'
+                example: '288'
             Connection:
               schema:
                 type: string
@@ -1602,7 +1620,7 @@ paths:
             CF-RAY:
               schema:
                 type: string
-                example: 9c5663b7ebee41e5-HYD
+                example: 9d0b9f78eaf241e5-HYD
             Content-Encoding:
               schema:
                 type: string
@@ -1610,11 +1628,11 @@ paths:
             etag:
               schema:
                 type: string
-                example: W/"1ba-PD5OhRPa/UaDuFlxWrs/kFMlAoo"
+                example: W/"176-0XI8xFDc8meQ+4csMptZ7AVWxBs"
             rndr-id:
               schema:
                 type: string
-                example: 0cc80901-2a21-4a21
+                example: a41d103b-6b64-4827
             vary:
               schema:
                 type: string
@@ -1647,10 +1665,10 @@ paths:
                 {
                     "msg": "The specific blog found!",
                     "blog": {
-                        "_id": "697a01541d612a03813bf1ce",
-                        "title": "How to get a good tech job in 2026?",
-                        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                        "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                        "_id": "6996edfa0de880aa880353c0",
+                        "title": "The Future of Artificial Intelligence",
+                        "description": "Exploring how AI is reshaping industries and everyday life.",
+                        "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
                         "topic": "tech",
                         "__v": 0
                     }
@@ -1661,7 +1679,7 @@ paths:
             Date:
               schema:
                 type: string
-                example: Thu, 29 Jan 2026 05:39:09 GMT
+                example: Fri, 20 Feb 2026 05:33:10 GMT
             Content-Type:
               schema:
                 type: string
@@ -1677,7 +1695,7 @@ paths:
             CF-RAY:
               schema:
                 type: string
-                example: 9c566330cb7341e5-HYD
+                example: 9d0ba0aa0aa941e5-HYD
             Content-Encoding:
               schema:
                 type: string
@@ -1689,7 +1707,7 @@ paths:
             rndr-id:
               schema:
                 type: string
-                example: 2032b5db-8d28-4406
+                example: 6ffd6310-9c86-4ac4
             vary:
               schema:
                 type: string
@@ -1740,7 +1758,7 @@ paths:
             Date:
               schema:
                 type: string
-                example: Thu, 29 Jan 2026 05:46:45 GMT
+                example: Fri, 20 Feb 2026 05:34:47 GMT
             Content-Type:
               schema:
                 type: string
@@ -1748,7 +1766,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '461'
+                example: '410'
             Connection:
               schema:
                 type: string
@@ -1756,7 +1774,7 @@ paths:
             CF-RAY:
               schema:
                 type: string
-                example: 9c566e50680321ba-HYD
+                example: 9d0ba3051f443460-HYD
             Content-Encoding:
               schema:
                 type: string
@@ -1764,11 +1782,11 @@ paths:
             etag:
               schema:
                 type: string
-                example: W/"99c-7OhxMAuHGadlRiQE7ciNGX2INRA"
+                example: W/"3eb-OTq6a7ZsAXfUORTVFQlsN6q/L+4"
             rndr-id:
               schema:
                 type: string
-                example: e21d4a44-2bde-4ae0
+                example: ac18f1fc-4520-4058
             vary:
               schema:
                 type: string
@@ -1799,103 +1817,55 @@ paths:
                 type: string
               examples:
                 example-0:
-                  summary: Successful Response For Tech Topic Term
+                  summary: Successful Response with Science Term
                   value: |-
                     {
                         "searchedTopicData": [
                             {
-                                "_id": "6929865e3de2a4f78e6eed45",
-                                "title": "How to become a Python Full Stack Dev in (2025)",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "tech",
+                                "_id": "6996eeba0de880aa880353c2",
+                                "title": "Space Exploration in 2026",
+                                "description": "A look at recent advancements in interplanetary missions.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
+                                "topic": "science",
                                 "__v": 0
                             },
                             {
-                                "_id": "6929866b3de2a4f78e6eed47",
-                                "title": "How to become a Full Stack Dev in (2025)",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "tech",
+                                "_id": "6996eef70de880aa880353c6",
+                                "title": "The Rise of Renewable Energy",
+                                "description": "How solar and wind power are transforming global energy systems.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
+                                "topic": "science",
                                 "__v": 0
                             },
                             {
-                                "_id": "692986bb823e75e591570385",
-                                "title": "How to become a Java Full Stack Dev in (2025)",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "tech",
-                                "__v": 0
-                            },
-                            {
-                                "_id": "69298761823e75e591570389",
-                                "title": "How to make coding more interesting",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "tech",
-                                "__v": 0
-                            },
-                            {
-                                "_id": "69763c765afda2dca12c2a3e",
-                                "title": "Tech that changed the dynamics of 2025!",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "tech",
-                                "__v": 0
-                            },
-                            {
-                                "_id": "697a01541d612a03813bf1ce",
-                                "title": "How to get a good tech job in 2026?",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "tech",
+                                "_id": "6996f05f0de880aa880353da",
+                                "title": "Exploring Mars Missions",
+                                "description": "How robotic explorers are uncovering secrets of the red planet.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
+                                "topic": "science",
                                 "__v": 0
                             }
                         ]
                     }
                 example-1:
-                  summary: Successful Response For Science Topic Term
+                  summary: Successful Response with Health Term
                   value: |-
                     {
                         "searchedTopicData": [
                             {
-                                "_id": "69298713823e75e591570387",
-                                "title": "Will the sun explode in 5 billion years",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "science",
+                                "_id": "6996efa10de880aa880353d0",
+                                "title": "Exploring the Human Brain",
+                                "description": "Recent discoveries in neuroscience and cognition.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
+                                "topic": "health",
                                 "__v": 0
                             },
                             {
-                                "_id": "6929879c823e75e59157038b",
-                                "title": "Is ATLAS 3I an interstellar comet or an UFO",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "science",
-                                "__v": 0
-                            },
-                            {
-                                "_id": "69298805823e75e59157038f",
-                                "title": "Did NASA really land on moon or is it",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "science",
-                                "__v": 0
-                            },
-                            {
-                                "_id": "6929b06d8c75ac139670d7fb",
-                                "title": "The Great Tech Infrastructure of 2025!",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "science",
-                                "__v": 0
-                            },
-                            {
-                                "_id": "697641935afda2dca12c2a42",
-                                "title": "Does Aliens really exist ?",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                                "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                                "topic": "science",
+                                "_id": "6996efe30de880aa880353d4",
+                                "title": "Machine Learning in Healthcare",
+                                "description": "AI-driven tools improving diagnostics and treatment.",
+                                "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
+                                "topic": "health",
                                 "__v": 0
                             }
                         ]
@@ -1906,7 +1876,7 @@ paths:
             Date:
               schema:
                 type: string
-                example: Thu, 29 Jan 2026 05:45:04 GMT
+                example: Fri, 20 Feb 2026 05:36:26 GMT
             Content-Type:
               schema:
                 type: string
@@ -1922,7 +1892,7 @@ paths:
             CF-RAY:
               schema:
                 type: string
-                example: 9c566bda8e0c4e87-HYD
+                example: 9d0ba5737c983460-HYD
             Content-Encoding:
               schema:
                 type: string
@@ -1934,7 +1904,7 @@ paths:
             rndr-id:
               schema:
                 type: string
-                example: 7cc553cf-73b7-40f7
+                example: 1dc78497-bbc6-40d5
             vary:
               schema:
                 type: string
@@ -1967,11 +1937,17 @@ paths:
                 {
                     "msg": "No search results found (or) Invalid topic term!"
                 }
-  /user/add-favourite-blog/697a01541d612a03813bf1ce:
+  /user/add-favourite-blog/6996efa10de880aa880353d0:
     post:
       tags:
         - Users
       summary: Add to Favourite Blogs
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ''
       responses:
         '200':
           description: OK
@@ -1979,7 +1955,7 @@ paths:
             Date:
               schema:
                 type: string
-                example: Thu, 29 Jan 2026 05:51:39 GMT
+                example: Fri, 20 Feb 2026 05:39:07 GMT
             Content-Type:
               schema:
                 type: string
@@ -1995,7 +1971,7 @@ paths:
             CF-RAY:
               schema:
                 type: string
-                example: 9c567579f94b79ee-HYD
+                example: 9d0ba9600b9d79f5-HYD
             Content-Encoding:
               schema:
                 type: string
@@ -2007,7 +1983,7 @@ paths:
             rndr-id:
               schema:
                 type: string
-                example: 2e83342e-8f59-4f95
+                example: 5abe8ebf-cbe1-4951
             vary:
               schema:
                 type: string
@@ -2046,7 +2022,7 @@ paths:
             Date:
               schema:
                 type: string
-                example: Thu, 29 Jan 2026 05:48:35 GMT
+                example: Fri, 20 Feb 2026 05:41:26 GMT
             Content-Type:
               schema:
                 type: string
@@ -2062,7 +2038,7 @@ paths:
             CF-RAY:
               schema:
                 type: string
-                example: 9c567100edc3347a-HYD
+                example: 9d0bacc48bf379f5-HYD
             Content-Encoding:
               schema:
                 type: string
@@ -2074,7 +2050,7 @@ paths:
             rndr-id:
               schema:
                 type: string
-                example: d9e57943-9004-4e70
+                example: e1444a5f-c676-4f86
             vary:
               schema:
                 type: string
@@ -2119,7 +2095,7 @@ paths:
             Date:
               schema:
                 type: string
-                example: Thu, 29 Jan 2026 05:53:30 GMT
+                example: Fri, 20 Feb 2026 05:43:18 GMT
             Content-Type:
               schema:
                 type: string
@@ -2127,7 +2103,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '367'
+                example: '410'
             Connection:
               schema:
                 type: string
@@ -2135,7 +2111,7 @@ paths:
             CF-RAY:
               schema:
                 type: string
-                example: 9c567830ac1ad126-HYD
+                example: 9d0baf821b0021ba-HYD
             Content-Encoding:
               schema:
                 type: string
@@ -2143,11 +2119,11 @@ paths:
             etag:
               schema:
                 type: string
-                example: W/"33d-54UZ0SgIV8opilrlK+0mev/xn74"
+                example: W/"3dd-oAcBPPCwbAS53ZfWsFnHBEe7x2U"
             rndr-id:
               schema:
                 type: string
-                example: e676cd9a-7ae1-49ce
+                example: 71d2a69c-bf1b-415b
             vary:
               schema:
                 type: string
@@ -2180,19 +2156,27 @@ paths:
                 {
                     "favouriteBlogs": [
                         {
-                            "_id": "69298713823e75e591570387",
-                            "title": "Will the sun explode in 5 billion years",
-                            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                            "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
+                            "_id": "6996eeba0de880aa880353c2",
+                            "title": "Space Exploration in 2026",
+                            "description": "A look at recent advancements in interplanetary missions.",
+                            "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
                             "topic": "science",
                             "__v": 0
                         },
                         {
-                            "_id": "697a01541d612a03813bf1ce",
-                            "title": "How to get a good tech job in 2026?",
-                            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                            "imageLink": "https://media.geeksforgeeks.org/wp-content/uploads/20240415204701/How-to-Become-a-Python-Full-Stack-Developer.png",
-                            "topic": "tech",
+                            "_id": "6996efe30de880aa880353d4",
+                            "title": "Machine Learning in Healthcare",
+                            "description": "AI-driven tools improving diagnostics and treatment.",
+                            "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
+                            "topic": "health",
+                            "__v": 0
+                        },
+                        {
+                            "_id": "6996f05f0de880aa880353da",
+                            "title": "Exploring Mars Missions",
+                            "description": "How robotic explorers are uncovering secrets of the red planet.",
+                            "imageLink": "https://github.com/Kowshik-8055/Blogs-App/blob/main/Dark%20Blue%20Minimalist%20Simple%20Inspirational%20Desktop%20Wallpaper.png?raw=true",
+                            "topic": "science",
                             "__v": 0
                         }
                     ]
@@ -2270,6 +2254,7 @@ paths:
                 {
                     "error": "Bad route (or) No route found"
                 }
+
 components:
   securitySchemes:
     AdminAuth:
@@ -2283,7 +2268,7 @@ components:
         - Paste the token in the **Authorize** button.
         - _Note: Do not attach the Bearer in this only use the (raw token)_
         - Format must be exactly only the _(raw token)_: 
-        `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMiIsImlhdCI6MTc2OTM1NjEwNH0.w2uHf-PySYP1V6wMZD48uPzZ_bf6a7wgE1YZa0aqWss`
+        `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMDEiLCJpYXQiOjE3NzE1MjI3NDh9.iO63ObRy28pplN5acb9c4qhtAPkAcnqLs9xCvSA3ex4`
     UserAuth:
       type: http
       scheme: bearer
@@ -2295,4 +2280,4 @@ components:
         - Paste the token in the **Authorize** button.
         - _Note: Do not attach the Bearer in this only use the (raw token)_
         - Format must be exactly only the _(raw token)_:
-        `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im51bWJlcjMuZGV2IiwiaWF0IjoxNzcwNjEwOTc3fQ.jC2k0O7C-kkZVoUwAj3xPwFgJ0gx_c_9IRpQEToxiyQ`
+        `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwMSIsImlhdCI6MTc3MTU2NTIzN30.IDRJgePk3aW2BTipbMC7Ni30F5afeCNuX18LG4up-88`
