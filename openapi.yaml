@@ -35,8 +35,6 @@ paths:
       tags:
         - Admin
       summary: SignUp
-      requestBody:
-        content: {}
       parameters:
         - name: username
           in: header
@@ -188,8 +186,6 @@ paths:
       tags:
         - Admin
       summary: SignIn
-      requestBody:
-        content: {}
       parameters:
         - name: username
           in: header
@@ -988,12 +984,6 @@ paths:
       tags:
         - Users
       summary: SignUp
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example: ''
       parameters:
         - name: username
           in: header
@@ -1942,12 +1932,6 @@ paths:
       tags:
         - Users
       summary: Add to Favourite Blogs
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example: ''
       responses:
         '200':
           description: OK
